@@ -381,11 +381,12 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     background-color: rgba(60,64,68,0.05);
     border: 1px solid var(--neutral);
-    padding: 0.4rem;
+    padding: 0.6rem 0.8rem;
     border-radius: 4px;
-    display: inline-flex;
-    align-items: center;
-    gap: 2px;
+    display: inline-block;
+    text-align: left;
+    line-height: 1.5;
+    min-height: 3.8rem; /* Prevents layout jump when text wraps to 2 lines */
 }
 
 .cursor-blink {
@@ -400,6 +401,15 @@ h1, h2, h3, h4, h5, h6 {
 /* Bio Card */
 .summary-card {
     height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
 }
 
 .body-text {
@@ -471,10 +481,22 @@ a.contact-value:hover {
     margin-bottom: 0;
 }
 
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: calc(-2.5rem + 6px);
+    top: 15px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    z-index: 2;
+}
+
 .timeline-badge {
     position: absolute;
-    left: calc(-2.5rem - 10px);
-    top: 6px;
+    left: 1rem;
+    top: -14px;
     background-color: var(--tertiary);
     color: var(--secondary);
     padding: 0.25rem 0.75rem;
@@ -489,6 +511,56 @@ a.contact-value:hover {
 
 .timeline-card {
     width: 100%;
+}
+
+.timeline-card .card-header {
+    padding-top: 1.5rem;
+}
+
+.timeline-card .card-header.has-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.company-logo {
+    width: 65px;
+    height: 65px;
+    flex-shrink: 0;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.company-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+a.company-logo.link-logo {
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.company-logo.link-logo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 600px) {
+    .timeline-card .card-header.has-logo {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+    .company-logo {
+        margin-bottom: 1rem;
+    }
 }
 
 .company-info {
@@ -572,6 +644,11 @@ a.contact-value:hover {
     gap: 1.25rem;
 }
 
+.projects-grid.row-layout-grid {
+    display: flex;
+    flex-direction: column;
+}
+
 .project-btn-card {
     background-color: var(--bg-main);
     border: 2px solid var(--border-color);
@@ -585,6 +662,53 @@ a.contact-value:hover {
     transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1),
                 box-shadow 0.2s cubic-bezier(0.165, 0.84, 0.44, 1),
                 background-color 0.2s ease;
+}
+
+.project-btn-card.row-card {
+    flex-direction: row;
+    padding: 0;
+    align-items: stretch;
+    height: auto;
+    min-height: 140px;
+    overflow: hidden;
+}
+
+.project-card-thumb {
+    flex: 0 0 33.33%;
+    position: relative;
+    border-right: 2px solid var(--border-color);
+    background-color: var(--border-color);
+    overflow: hidden;
+}
+
+.project-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-card-content {
+    flex: 1;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+@media (max-width: 600px) {
+    .project-btn-card.row-card {
+        flex-direction: column;
+    }
+    .project-card-thumb {
+        border-right: none;
+        border-bottom: 2px solid var(--border-color);
+        flex: 0 0 160px;
+        width: 100%;
+    }
 }
 
 .project-btn-card:hover {
@@ -637,31 +761,43 @@ a.contact-value:hover {
 
 /* FREELANCE CARD STYLING */
 .freelance-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 1.25rem;
 }
 
 .freelance-card {
     background-color: var(--bg-main);
-    border: 1px solid var(--neutral);
+    border: 2px solid var(--border-color);
     border-radius: 6px;
-    padding: 1rem;
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
+    transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.2s ease;
+}
+
+.freelance-card:hover {
+    background-color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 3px 3px 0px var(--shadow-color);
 }
 
 .freelance-year {
+    align-self: flex-start;
+    background-color: var(--secondary);
+    color: var(--tertiary);
     font-size: 0.75rem;
     font-weight: 700;
-    color: var(--primary-dark);
-    margin-bottom: 0.5rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 0.75rem;
 }
 
 .freelance-desc {
-    font-size: 0.88rem;
-    font-weight: 500;
-    line-height: 1.5;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.4;
     color: var(--text-main);
 }
 
@@ -1094,9 +1230,9 @@ a.contact-value:hover {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(30, 32, 34, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(30, 32, 34, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     z-index: 2000;
     display: none; /* Controlled by script */
     flex-direction: column;
@@ -1369,8 +1505,12 @@ a.contact-value:hover {
     .timeline::before {
         left: 5px;
     }
+    .timeline-item::before {
+        left: calc(-1.5rem + 1px);
+    }
     .timeline-badge {
-        left: calc(-1.5rem - 6px);
+        left: 1rem;
+        top: -12px;
         font-size: 0.75rem;
         padding: 0.15rem 0.4rem;
     }
