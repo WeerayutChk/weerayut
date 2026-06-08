@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weerayut Chueakham - Professional Web Resume</title>
+    <meta name="description" content="Resume/Portfolio of Weerayut Chueakham - Control Systems, IoT & Embedded Systems Specialist.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;800&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Canvas Overlay for Retro Scanlines -->
+    <div class="scanlines"></div>
+
+    <!-- Top Navigation Bar -->
+    <header class="navbar" id="main-navbar">
+        <div class="nav-container">
+            <div class="nav-logo" id="nav-logo-text">
+                <span class="tech-prefix">WY.</span><span class="tech-body">DEV</span>
+            </div>
+            
+            <nav class="nav-links" id="nav-menu">
+                <a href="#about" class="nav-link active" data-key="nav-about">เกี่ยวกับ</a>
+                <a href="#experience" class="nav-link" data-key="nav-experience">ประวัติการทำงาน</a>
+                <a href="#skills" class="nav-link" data-key="nav-skills">ทักษะ</a>
+                <a href="#terminal" class="nav-link" data-key="nav-terminal">เทอร์มินัล</a>
+                <a href="#contact" class="nav-link" data-key="nav-contact">ติดต่อ</a>
+            </nav>
+
+            <div class="nav-controls">
+                <!-- Sound Toggle -->
+                <button class="control-btn" id="sound-toggle" title="เปิด/ปิดเสียงคีย์บอร์ด">
+                    <i class="fa-solid fa-volume-xmark"></i>
+                </button>
+                
+                <!-- Language Toggle -->
+                <div class="lang-switch-container">
+                    <span class="lang-label label-th active">TH</span>
+                    <button class="lang-switch-btn" id="lang-toggle" aria-label="Toggle Language">
+                        <span class="lang-switch-slider"></span>
+                    </button>
+                    <span class="lang-label label-en">EN</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-content">
+        <!-- HERO / ABOUT SECTION -->
+        <section id="about" class="section about-section">
+            <div class="grid-container">
+                <!-- Profile Pic and Title Card -->
+                <div class="card profile-card glow-on-hover">
+                    <div class="profile-frame">
+                        <img src="images/profile.jpg" alt="Weerayut Chueakham Profile" id="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h1 class="headline-text" id="dev-name">Weerayut Chueakham</h1>
+                        <h2 class="sub-headline" id="dev-nickname">วีรยุทธ เชื้อคำ (ต้อง)</h2>
+                        <div class="typing-container">
+                            <span class="tech-prefix">&gt; </span>
+                            <span id="typing-text" class="code-font text-primary"></span>
+                            <span class="cursor-blink">|</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bio & Professional Summary -->
+                <div class="card summary-card">
+                    <div class="card-header">
+                        <div class="dot-decorations">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="card-title-text code-font" data-key="summary-title">ABOUT_ME.md</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="body-text text-justify" id="profile-summary">
+                            <!-- Injected by script -->
+                        </p>
+                        <hr class="divider">
+                        <!-- Contact Info Grid -->
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <i class="fa-solid fa-envelope text-primary"></i>
+                                <div>
+                                    <span class="contact-label code-font">EMAIL</span>
+                                    <a href="mailto:vrayut86@gmail.com" class="contact-value">vrayut86@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa-brands fa-line text-primary"></i>
+                                <div>
+                                    <span class="contact-label code-font">LINE ID</span>
+                                    <span class="contact-value">vrayut</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa-solid fa-phone text-primary"></i>
+                                <div>
+                                    <span class="contact-label code-font">PHONE</span>
+                                    <a href="tel:0918594329" class="contact-value">091-859-4329</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa-solid fa-location-dot text-primary"></i>
+                                <div>
+                                    <span class="contact-label code-font">LOCATION</span>
+                                    <span class="contact-value" id="location-text">เชียงใหม่, ประเทศไทย</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORK EXPERIENCE SECTION -->
+        <section id="experience" class="section experience-section">
+            <h2 class="section-heading" data-key="section-experience"><i class="fa-solid fa-briefcase heading-icon"></i>ประวัติการทำงานและผลงาน</h2>
+            
+            <div class="timeline">
+                <!-- COMPANY 2: DONAUS (2022 - 2025) -->
+                <div class="timeline-item">
+                    <div class="timeline-badge code-font">2022 - 2025</div>
+                    <div class="card timeline-card glow-on-hover">
+                        <div class="card-header">
+                            <div class="company-info">
+                                <h3 class="experience-title" id="donaus-title">Product R&D Engineer</h3>
+                                <h4 class="experience-company code-font text-primary">Donaus CO., LTD. (บริษัท ดลอส จำกัด)</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <ul class="experience-list" id="donaus-duties">
+                                <!-- Injected by script -->
+                            </ul>
+                            
+                            <!-- Project Galleries Header -->
+                            <div class="projects-gallery-header">
+                                <span class="gallery-label code-font" data-key="projects-gallery-title">
+                                    <i class="fa-solid fa-images text-primary"></i> CLICK_YEAR_TO_VIEW_PHOTOS.json
+                                </span>
+                            </div>
+
+                            <!-- Projects Interactive Grid -->
+                            <div class="projects-grid">
+                                <!-- Project cards with year clickers -->
+                                <div class="project-btn-card" onclick="openGallery('nan_car')" id="proj-nan_car-card">
+                                    <div class="project-card-badge code-font">2023</div>
+                                    <h5 class="project-title" id="proj-nan_car-title">โครงการรถไฟฟ้าท่องเที่ยว จังหวัดน่าน</h5>
+                                    <p class="project-short-desc" id="proj-nan_car-desc">ออกแบบและพัฒนาระบบควบคุมสำหรับรถไฟฟ้าท่องเที่ยว จังหวัดน่าน</p>
+                                    <span class="view-gallery-action code-font"><i class="fa-solid fa-circle-play"></i> GALLERY (36)</span>
+                                </div>
+
+                                <div class="project-btn-card" onclick="openGallery('motorcycle')" id="proj-motorcycle-card">
+                                    <div class="project-card-badge code-font">2023</div>
+                                    <h5 class="project-title" id="proj-motorcycle-title">โครงการพัฒนาระบบรถจักรยานยนต์ไฟฟ้า</h5>
+                                    <p class="project-short-desc" id="proj-motorcycle-desc">ออกแบบเฟิร์มแวร์ระบบควบคุมและจัดการแบตเตอรี่รถจักรยานยนต์ไฟฟ้า</p>
+                                    <span class="view-gallery-action code-font"><i class="fa-solid fa-circle-play"></i> GALLERY (7)</span>
+                                </div>
+
+                                <div class="project-btn-card" onclick="openGallery('tram')" id="proj-tram-card">
+                                    <div class="project-card-badge code-font">2023</div>
+                                    <h5 class="project-title" id="proj-tram-title">รถรางไฟฟ้าแห่กระทง มหาวิทยาลัยเชียงใหม่</h5>
+                                    <p class="project-short-desc" id="proj-tram-desc">พัฒนาระบบควบคุมขับเคลื่อนและการตกแต่งไฟฟ้าประดับรถราง</p>
+                                    <span class="view-gallery-action code-font"><i class="fa-solid fa-circle-play"></i> GALLERY (16)</span>
+                                </div>
+
+                                <div class="project-btn-card" onclick="openGallery('solar')" id="proj-solar-card">
+                                    <div class="project-card-badge code-font">2023</div>
+                                    <h5 class="project-title" id="proj-solar-title">ระบบโซล่าเซลล์ สวนหลวง</h5>
+                                    <p class="project-short-desc" id="proj-solar-desc">พัฒนาระบบบันทึกข้อมูลและแสดงผลแดชบอร์ดพลังงานโซล่าเซลล์</p>
+                                    <span class="view-gallery-action code-font"><i class="fa-solid fa-circle-play"></i> GALLERY (21)</span>
+                                </div>
+
+                                <div class="project-btn-card" onclick="openGallery('expressway')" id="proj-expressway-card">
+                                    <div class="project-card-badge code-font">2023</div>
+                                    <h5 class="project-title" id="proj-expressway-title">โครงการระบบอิเล็กทรอนิกส์ทางด่วน</h5>
+                                    <p class="project-short-desc" id="proj-expressway-desc">ออกแบบและติดตั้งระบบเซนเซอร์วัดค่าและควบคุมอินเทอร์เฟซระยะไกล</p>
+                                    <span class="view-gallery-action code-font"><i class="fa-solid fa-circle-play"></i> GALLERY (53)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COMPANY 1: INNOEDGE GOGO (2018 - 2021) -->
+                <div class="timeline-item">
+                    <div class="timeline-badge code-font">2018 - 2021</div>
+                    <div class="card timeline-card glow-on-hover">
+                        <div class="card-header">
+                            <div class="company-info">
+                                <h3 class="experience-title" id="innoedge-main-title">Project Manager & Technical Engineer</h3>
+                                <h4 class="experience-company code-font text-primary">Innoedge Gogo Co., Ltd. (บริษัท อินโนเอดจ์ โกโก จำกัด)</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <!-- Multi-roles styling -->
+                            <div class="sub-role">
+                                <h5 class="sub-role-title code-font"><i class="fa-solid fa-chevron-right text-primary"></i> <span id="innoedge-r1-title">Project Manager</span></h5>
+                                <ul class="experience-list" id="innoedge-r1-duties">
+                                    <!-- Injected by script -->
+                                </ul>
+                            </div>
+                            <div class="sub-role">
+                                <h5 class="sub-role-title code-font"><i class="fa-solid fa-chevron-right text-primary"></i> <span id="innoedge-r2-title">Technical Services</span></h5>
+                                <ul class="experience-list" id="innoedge-r2-duties">
+                                    <!-- Injected by script -->
+                                </ul>
+                            </div>
+                            <div class="sub-role">
+                                <h5 class="sub-role-title code-font"><i class="fa-solid fa-chevron-right text-primary"></i> <span id="innoedge-r3-title">Technical Support Engineer</span></h5>
+                                <ul class="experience-list" id="innoedge-r3-duties">
+                                    <!-- Injected by script -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FREELANCE PROJECTS GRID -->
+                <div class="timeline-item">
+                    <div class="timeline-badge code-font">Freelance</div>
+                    <div class="card timeline-card glow-on-hover">
+                        <div class="card-header">
+                            <div class="company-info">
+                                <h3 class="experience-title" id="freelance-main-title">Freelance Developer</h3>
+                                <h4 class="experience-company code-font text-primary">Independent Engineering & Software Contracts</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="freelance-grid">
+                                <div class="freelance-card">
+                                    <div class="freelance-year code-font">2025 (2568)</div>
+                                    <p class="freelance-desc" id="freelance-2025-desc">ชุดอุปกรณ์ทดสอบ และฝึกการทรงตัว ของผู้ป่วยกายภาพ ศูนย์เวชศาสตร์ฟื้นฟู</p>
+                                </div>
+                                <div class="freelance-card">
+                                    <div class="freelance-year code-font">2024 (2567)</div>
+                                    <p class="freelance-desc" id="freelance-2024-desc">ชุดอุปกรณ์ Smart Farm เพาะเลี้ยงหนอนแมลงวันลายเสือ วิทยาลัยนานาชาตินวัตกรรมดิจิทัล</p>
+                                </div>
+                                <div class="freelance-card">
+                                    <div class="freelance-year code-font">2023 (2566)</div>
+                                    <p class="freelance-desc" id="freelance-2023-desc">ระบบวัดทดสอบคุณภาพน้ำ บริษัท เพชรหิรัญ เอ็นจิเนียริ่ง เซอร์วิส จำกัด</p>
+                                </div>
+                                <div class="freelance-card">
+                                    <div class="freelance-year code-font">2022 (2565)</div>
+                                    <p class="freelance-desc" id="freelance-2022-desc">ระบบ Smart Power Station บริษัท ตองแปด โลจิสติกส์ จำกัด</p>
+                                </div>
+                                <div class="freelance-card">
+                                    <div class="freelance-year code-font">2021 (2564)</div>
+                                    <p class="freelance-desc" id="freelance-2021-desc">ออกแบบ และจัดทำชุด Gateway sensor และชุด Temp Alert บริษัท ไอเดีย เฮ้าส์ เซ็นเตอร์ จำกัด</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION & LANGUAGE SECTION -->
+        <section class="section education-section">
+            <div class="education-skills-layout">
+                <!-- Education Card -->
+                <div class="card education-card">
+                    <div class="card-header">
+                        <div class="dot-decorations">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="card-title-text code-font" data-key="education-card-title">EDUCATION.md</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="education-timeline">
+                            <div class="edu-item">
+                                <div class="edu-dot"></div>
+                                <span class="edu-year code-font">2016 - 2019</span>
+                                <h4 class="edu-school" id="edu-school-3">มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา</h4>
+                                <p class="edu-degree" id="edu-degree-3">ปริญญาตรี วิศวกรรมศาสตรบัณฑิต สาขาวิศวกรรมคอมพิวเตอร์</p>
+                            </div>
+                            <div class="edu-item">
+                                <div class="edu-dot"></div>
+                                <span class="edu-year code-font">2013 - 2015</span>
+                                <h4 class="edu-school" id="edu-school-2">วิทยาลัยเทคนิคเชียงใหม่</h4>
+                                <p class="edu-degree" id="edu-degree-2">ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.) สาขาอิเล็กทรอนิกส์</p>
+                            </div>
+                            <div class="edu-item">
+                                <div class="edu-dot"></div>
+                                <span class="edu-year code-font">2010 - 2013</span>
+                                <h4 class="edu-school" id="edu-school-1">วิทยาลัยเทคโนโลยีพายัพและบริหารธุรกิจ</h4>
+                                <p class="edu-degree" id="edu-degree-1">ประกาศนียบัตรวิชาชีพ (ปวช.) สาขาคอมพิวเตอร์ธุรกิจ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages Card -->
+                <div class="card language-card">
+                    <div class="card-header">
+                        <div class="dot-decorations">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="card-title-text code-font" data-key="lang-card-title">LANGUAGES.md</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="lang-container">
+                            <div class="lang-badge glow-on-hover">
+                                <div class="lang-flag"><i class="fa-solid fa-flag-usa"></i></div>
+                                <div class="lang-details">
+                                    <h4 class="lang-name" data-key="lang-en-title">ภาษาอังกฤษ</h4>
+                                    <span class="lang-level code-font" data-key="lang-en-level">Intermediate (ระดับปานกลาง)</span>
+                                </div>
+                            </div>
+                            <div class="lang-badge glow-on-hover">
+                                <div class="lang-flag"><i class="fa-solid fa-location-arrow"></i></div>
+                                <div class="lang-details">
+                                    <h4 class="lang-name" data-key="lang-th-title">ภาษาไทย</h4>
+                                    <span class="lang-level code-font" data-key="lang-th-level">Native Language (เจ้าของภาษา)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="section skills-section">
+            <h2 class="section-heading" data-key="section-skills"><i class="fa-solid fa-gears heading-icon"></i>ทักษะและความสามารถ</h2>
+            
+            <div class="skills-grid">
+                <!-- Hardware Skills -->
+                <div class="card skill-card glow-on-hover">
+                    <div class="card-header border-orange">
+                        <i class="fa-solid fa-microchip skill-icon text-primary"></i>
+                        <span class="skill-group-title code-font" data-key="skill-g1-title">HARDWARE & ELECTRONICS</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="skill-group-desc" id="skill-g1-desc"></p>
+                        <div class="skill-meter-container">
+                            <div class="skill-meter-label code-font">System Planning <span class="percent">90%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 0%" data-width="90%"></div></div>
+                            
+                            <div class="skill-meter-label code-font">3D CAD Modeling <span class="percent">85%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 0%" data-width="85%"></div></div>
+
+                            <div class="skill-meter-label code-font">PCB Schematic Design <span class="percent">90%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 0%" data-width="90%"></div></div>
+
+                            <div class="skill-meter-label code-font">Soldering & Assembly <span class="percent">95%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 0%" data-width="95%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Firmware Skills -->
+                <div class="card skill-card glow-on-hover">
+                    <div class="card-header border-orange">
+                        <i class="fa-solid fa-code-branch skill-icon text-primary"></i>
+                        <span class="skill-group-title code-font" data-key="skill-g2-title">FIRMWARE & MCU</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="skill-group-desc" id="skill-g2-desc"></p>
+                        <div class="skill-meter-container">
+                            <div class="skill-meter-label code-font">Arduino & ESP Core <span class="percent">95%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 0%" data-width="95%"></div></div>
+                            
+                            <div class="skill-meter-label code-font">STM32 (HAL / LL) <span class="percent">80%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 0%" data-width="80%"></div></div>
+
+                            <div class="skill-meter-label code-font">Raspberry Pi (Python/C) <span class="percent">90%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 0%" data-width="90%"></div></div>
+
+                            <div class="skill-meter-label code-font">MCU Communication Networks <span class="percent">88%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 0%" data-width="88%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software/Web Skills -->
+                <div class="card skill-card glow-on-hover">
+                    <div class="card-header border-orange">
+                        <i class="fa-solid fa-globe skill-icon text-primary"></i>
+                        <span class="skill-group-title code-font" data-key="skill-g3-title">SOFTWARE & WEB DEVELOPER</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="skill-group-desc" id="skill-g3-desc"></p>
+                        <div class="skill-meter-container">
+                            <div class="skill-meter-label code-font">Fullstack Web (HTML/JS/Node) <span class="percent">85%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 0%" data-width="85%"></div></div>
+                            
+                            <div class="skill-meter-label code-font">API Integration & IoT MQTT <span class="percent">90%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 0%" data-width="90%"></div></div>
+
+                            <div class="skill-meter-label code-font">SQL Databases <span class="percent">80%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 0%" data-width="80%"></div></div>
+
+                            <div class="skill-meter-label code-font">Cloud Dashboards & Remote Control <span class="percent">85%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 0%" data-width="85%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TERMINAL INTERACTIVE CLI -->
+        <section id="terminal" class="section terminal-section">
+            <h2 class="section-heading" data-key="section-terminal"><i class="fa-solid fa-terminal heading-icon"></i>อินเตอร์แอคทีฟเทอร์มินัล</h2>
+            
+            <div class="card terminal-card-shell">
+                <div class="terminal-shell-header">
+                    <div class="dot-decorations">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="shell-title code-font">guest@weerayut-resume:~ (bash)</span>
+                    <div class="shell-controls">
+                        <i class="fa-regular fa-window-minimize"></i>
+                        <i class="fa-regular fa-square"></i>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                
+                <div class="terminal-shell-body code-font" id="terminal-body">
+                    <!-- Standard Welcome message -->
+                    <div class="terminal-output-line">Welcome to Weerayut's Interactive Terminal (v1.0.0-lts)</div>
+                    <div class="terminal-output-line text-muted">Type <span class="text-primary">help</span> to view all available commands, or click the shortcuts below.</div>
+                    <div class="terminal-output-line">&nbsp;</div>
+                    
+                    <div class="terminal-input-history" id="terminal-history">
+                        <!-- Command lines will be appended here -->
+                    </div>
+                    
+                    <!-- Prompt Line -->
+                    <div class="terminal-prompt-line">
+                        <span class="terminal-prompt-prefix">guest@weerayut-resume:~$</span>
+                        <input type="text" id="terminal-input" autofocus autocomplete="off" spellcheck="false" aria-label="Terminal input prompt">
+                    </div>
+                </div>
+
+                <!-- CLI Suggestion Buttons for Mobile/Easy click -->
+                <div class="terminal-shell-shortcuts">
+                    <span class="shortcuts-label code-font">RUN:</span>
+                    <button class="shortcut-btn code-font" onclick="runTerminalCmd('help')">help</button>
+                    <button class="shortcut-btn code-font" onclick="runTerminalCmd('about')">about</button>
+                    <button class="shortcut-btn code-font" onclick="runTerminalCmd('skills')">skills</button>
+                    <button class="shortcut-btn code-font" onclick="runTerminalCmd('projects')">projects</button>
+                    <button class="shortcut-btn code-font" onclick="runTerminalCmd('contact')">contact</button>
+                    <button class="shortcut-btn code-font" onclick="runTerminalCmd('clear')">clear</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section contact-section">
+            <h2 class="section-heading" data-key="section-contact"><i class="fa-solid fa-paper-plane heading-icon"></i>ส่งข้อความติดต่อ</h2>
+            
+            <div class="card contact-form-card">
+                <div class="card-header">
+                    <div class="dot-decorations">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="card-title-text code-font" data-key="contact-card-title">SEND_MESSAGE.sh</span>
+                </div>
+                <div class="card-body">
+                    <form id="contact-form" onsubmit="handleContactSubmit(event)">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="form-name" class="code-font" data-key="contact-lbl-name">ชื่อผู้ติดต่อ / Sender Name</label>
+                                <input type="text" id="form-name" required placeholder="ใส่ชื่อของคุณที่นี่">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email" class="code-font" data-key="contact-lbl-email">อีเมล / Email Address</label>
+                                <input type="email" id="form-email" required placeholder="name@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group margin-top-md">
+                            <label for="form-message" class="code-font" data-key="contact-lbl-msg">ข้อความ / Message Description</label>
+                            <textarea id="form-message" rows="5" required placeholder="พิมพ์ข้อความของคุณที่นี่..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn glow-on-hover code-font" id="submit-btn">
+                                <i class="fa-solid fa-terminal"></i> <span data-key="contact-btn-submit">EXECUTE_SUBMIT</span>
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div id="contact-success-msg" class="success-banner hidden">
+                        <i class="fa-solid fa-circle-check text-green success-icon"></i>
+                        <div>
+                            <h4 class="success-title code-font">SYSTEM_REPORT: Submit Successful</h4>
+                            <p class="success-body" data-key="contact-success-msg">ขอบคุณสำหรับข้อความ! ข้อมูลส่งถึง Weerayut เรียบร้อยแล้ว (ทางเว็บจำลองการทำงานสำเร็จ)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <span class="code-font text-muted footer-text">
+                © <span id="current-year">2026</span> Weerayut Chueakham. Made with <i class="fa-solid fa-heart text-primary"></i> using Vanilla CSS & JS.
+            </span>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE LIGHTBOX / IMAGE CAROUSEL MODAL -->
+    <div class="lightbox-modal" id="lightbox-modal">
+        <button class="lightbox-close-btn" onclick="closeGallery()" aria-label="Close Gallery">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        
+        <div class="lightbox-content-container">
+            <!-- Carousel Display Window -->
+            <div class="lightbox-slider-window">
+                <button class="lightbox-nav-btn prev-btn" onclick="navGallery(-1)" aria-label="Previous Image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                
+                <div class="lightbox-image-viewport">
+                    <img src="" alt="Gallery Work" id="lightbox-img">
+                    <div class="spinner" id="lightbox-spinner"></div>
+                </div>
+                
+                <button class="lightbox-nav-btn next-btn" onclick="navGallery(1)" aria-label="Next Image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Description Panel below image -->
+            <div class="lightbox-desc-panel">
+                <div class="lightbox-project-info">
+                    <h3 class="lightbox-project-title code-font" id="lightbox-project-title">PROJECT_TITLE</h3>
+                    <span class="lightbox-image-counter code-font" id="lightbox-image-counter">IMAGE_INDEX / TOTAL</span>
+                </div>
+                <p class="lightbox-image-desc" id="lightbox-image-desc">
+                    IMAGE_DESCRIPTION
+                </p>
+                <!-- Image Indicator Dots -->
+                <div class="lightbox-dots-container" id="lightbox-dots">
+                    <!-- Dots will be generated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
