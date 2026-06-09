@@ -689,6 +689,10 @@ a.company-logo.link-logo:hover {
     top: 0;
     left: 0;
     transition: opacity 0.4s ease;
+    /* Prevent image sharpening/noise jump after transition completes */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .project-card-content {
@@ -753,6 +757,7 @@ a.company-logo.link-logo:hover {
     gap: 0.4rem;
     border-top: 1px dashed var(--neutral);
     padding-top: 0.6rem;
+    margin-top: auto;
 }
 
 .project-btn-card:hover .view-gallery-action {
@@ -766,21 +771,6 @@ a.company-logo.link-logo:hover {
     gap: 1.25rem;
 }
 
-.freelance-card {
-    background-color: var(--bg-main);
-    border: 2px solid var(--border-color);
-    border-radius: 6px;
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.2s ease;
-}
-
-.freelance-card:hover {
-    background-color: #FFFFFF;
-    transform: translateY(-2px);
-    box-shadow: 3px 3px 0px var(--shadow-color);
-}
 
 .freelance-year {
     align-self: flex-start;

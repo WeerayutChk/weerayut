@@ -1,0 +1,14 @@
+{
+  "name": "web-resume",
+  "version": "1.0.0",
+  "description": "Portfolio website",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build_images.js"
+  },
+  "author": "Weerayut Chueakham",
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}

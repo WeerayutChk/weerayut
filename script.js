@@ -183,61 +183,86 @@ const translations = {
 // ==========================================
 // EMBEDDED PROJECT METADATA (avoid CORS)
 // ==========================================
-const projectsData = [
-    {
-        "key": "expressway",
-        "title_th": "โครงการระบบอิเล็กทรอนิกส์ทางด่วน",
-        "title_en": "Expressway Electronic System",
-        "year": "2023",
-        "desc_th": "ออกแบบและติดตั้งระบบทดสอบอุปกรณ์เซนเซอร์ ตัวควบคุมทางกายภาพ และการควบคุมระยะไกลบนทางด่วน เพื่อความปลอดภัยและการจราจรที่เสถียร",
-        "desc_en": "Designed and installed sensor testing systems, physical controllers, and remote monitoring interfaces on the expressway to ensure safety and stable traffic operations.",
-        "imagesCount": 53
-    },
-    {
-        "key": "motorcycle",
-        "title_th": "โครงการพัฒนาระบบรถจักรยานยนต์ไฟฟ้า",
-        "title_en": "Electric Motorcycle Development",
-        "year": "2023",
-        "desc_th": "วิจัย ออกแบบ และพัฒนาเฟิร์มแวร์ระบบควบคุมมอเตอร์ไฟฟ้าและระบบจัดการแบตเตอรี่ (BMS) สำหรับรถจักรยานยนต์ไฟฟ้าต้นแบบ",
-        "desc_en": "Researched, designed, and developed control firmware and battery management systems (BMS) for prototype electric motorcycles.",
-        "imagesCount": 7
-    },
-    {
-        "key": "tram",
-        "title_th": "รถรางไฟฟ้าแห่กระทง มหาวิทยาลัยเชียงใหม่",
-        "title_en": "CMU Electric Tram for Loy Krathong",
-        "year": "2023",
-        "desc_th": "พัฒนาระบบขับเคลื่อนไฟฟ้าและการควบคุมพลังงานของรถรางประดับขบวนแห่กระทง มหาวิทยาลัยเชียงใหม่ ตกแต่งด้วยระบบไฟอัจฉริยะ",
-        "desc_en": "Developed the electric drive system and power management for the Chiang Mai University Loy Krathong parade tram, integrated with smart decorative lighting.",
-        "imagesCount": 16
-    },
-    {
-        "key": "nan_car",
-        "title_th": "โครงการรถไฟฟ้าท่องเที่ยว จังหวัดน่าน",
-        "title_en": "Nan Province Electric Tourist Shuttle",
-        "year": "2023",
-        "desc_th": "ออกแบบ วิจัย และวางระบบควบคุมยานยนต์ไฟฟ้าอัจฉริยะสำหรับรับส่งนักท่องเที่ยวในเขตเมืองเก่า จังหวัดน่าน เพื่อส่งเสริมการท่องเที่ยวสีเขียว",
-        "desc_en": "Designed, researched, and implemented intelligent electric vehicle control systems for tourist shuttles in Nan's historic city center, promoting eco-friendly tourism.",
-        "imagesCount": 36
-    },
-    {
-        "key": "solar",
-        "title_th": "ระบบโซล่าเซลล์ สวนหลวง",
-        "title_en": "Suan Luang Solar Power System",
-        "year": "2023",
-        "desc_th": "ติดตั้ง วางระบบ และเชื่อมต่อระบบบันทึกข้อมูลและแสดงผล (Energy Dashboard) พลังงานแสงอาทิตย์เพื่อตรวจสอบประสิทธิภาพแบบเรียลไทม์",
-        "desc_en": "Installed, configured, and developed an energy monitoring dashboard for solar power generation at Suan Luang, enabling real-time efficiency tracking.",
-        "imagesCount": 21
-    }
-];
+// ==========================================
+// DYNAMIC UI & METADATA GENERATOR (FROM IMAGE_TREE)
+// ==========================================
 
-// Dynamically generate the full image paths array for each project configuration
-projectsData.forEach(p => {
-    p.images = [];
-    for (let i = 1; i <= p.imagesCount; i++) {
-        p.images.push(`images/${p.key}/img_${i}.jpg`);
+// เขียนคำอธิบายผลงาน (Description) ที่นี่ โดยใช้ "ชื่อโฟลเดอร์" เป็น Key
+const PROJECT_DETAILS = {
+    "จัดแสดงสินค้า Uniserv มช": "นำเสนอผลงาน นวัตกรรม และผลิตภัณฑ์ที่เกี่ยวข้องกับเทคโนโลยีการลดมลพิษ ให้กับบุคลากรหน่วยงานภาครัฐ และภาคเอกชน ",
+    "จัดแสดงสินค้า ศูนย์นวัตกรรม ลำปาง": "นำเสนอผลงาน นวัตกรรม และผลิตภัณฑ์ที่เกี่ยวข้องกับเทคโนโลยีรถไฟฟ้า ให้กับบุคลากรหน่วยงานภาครัฐ และภาคเอกชน",
+    "ชุดเก็บข้อมูลการใช้พลังงานในอาคาร": "ชุดเก็บบันทึกการใช้พลังงานภายในอาคาร เพื่อนำไปวิเคราะห์ และวางแผนการติดตั้งโซล่าเซลล์ให้เหมาะสมกับการใช้งาน",
+    "ระบบพ่นละอองน้ำ ด่านเก็บค่าผ่านทาง": "ออกแบบและติดตั้งระบบทดสอบอุปกรณ์เซนเซอร์ ตัวควบคุมทางกายภาพ และการควบคุมระยะไกลบนทางด่วน",
+    "รถมอไซไฟฟ้า": "วิจัย ออกแบบ และพัฒนาเฟิร์มแวร์ระบบควบคุมการเปิดปิดรถไฟฟ้าแบบ Key-less และระบบจัดการสลับใช้งานแบตเตอรี่",
+    "รถรางไฟฟ้าแห่กระทง มช": "พัฒนาระบบขับเคลื่อนไฟฟ้าและการควบคุมพลังงานของรถรางประดับขบวนแห่กระทง มหาวิทยาลัยเชียงใหม่",
+    "รถราง และรถสามล้อไฟฟ้า เทศบาลเมืองน่าน": "ออกแบบชุดจอแสดงผลชื่อสถาณี วางระบบควบคุมยานยนต์ไฟฟ้า และเว็บแอพพลิเคชัน สำหรับติดตามรถรับส่งนักท่องเที่ยวในเขตเมืองเก่า จังหวัดน่าน",
+    "ระบบไฟโซล่าเซลสวนหลวง ร.9": "ติดตั้งระบบควบคุมพลังงานแสงอาทิตย์ และ Energy Dashboard ที่สามารถควบคุมการเปิดปิดไฟส่องสว่างจากโทรศัพท์มือถือได้",
+    "ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู": "ชุดอุปกรณ์ทดสอบ และฝึกการทรงตัว ของผู้ป่วยกายภาพ ศูนย์เวชศาสตร์ฟื้นฟู",
+    "ชุดเลี้ยงหนอนแมลงวันลายเสือ เกษตร แม่เหียะ": "ชุดอุปกรณ์ Smart Farm เพาะเลี้ยงหนอนแมลงวันลายเสือ วิทยาลัยนานาชาตินวัตกรรมดิจิทัล",
+    "ชุดเซ็นเซอร์ตรวจวัดคุณภาพน้ำ": "ระบบวัดทดสอบคุณภาพน้ำ บริษัท เพชรหิรัญ เอ็นจิเนียริ่ง เซอร์วิส จำกัด",
+    "ระบบ Smart Power Station": "บริษัท ตองแปด โลจิสติกส์ จำกัด",
+    "ชุด Gateway sensor": "ออกแบบ และจัดทำชุด Gateway sensor และชุด Temp Alert บริษัท ไอเดีย เฮ้าส์ เซ็นเตอร์ จำกัด"
+};
+
+const projectsData = [];
+
+function generateProjectUI() {
+    if (!window.IMAGE_TREE) {
+        console.warn("window.IMAGE_TREE not found. Run 'node build_images.js' first.");
+        return;
     }
-});
+
+    for (const category in window.IMAGE_TREE) {
+        const container = document.getElementById(`projects-container-${category}`);
+        if (!container) continue;
+
+        const projects = window.IMAGE_TREE[category];
+        let htmlContent = "";
+
+        // Iterate through each project folder in the category
+        for (const folderName in projects) {
+            // Create a unique key for the DOM IDs (remove spaces/special chars)
+            const safeKey = `${category}-${folderName.replace(/\\s+/g, '-').replace(/[^a-zA-Z0-9-ก-๙]/g, '')}`;
+            const imagesArray = projects[folderName];
+            const imagesCount = imagesArray.length;
+            
+            // ดึงคำอธิบายจากตัวแปร PROJECT_DETAILS ถ้าไม่มีให้ใส่ข้อความว่างๆ
+            const description = PROJECT_DETAILS[folderName] || "";
+
+            // Push to projectsData for Lightbox compatibility
+            projectsData.push({
+                key: safeKey,
+                folderName: folderName,
+                title_th: folderName, // Use folder name as title
+                title_en: folderName, // Use folder name as title
+                desc_th: description, // Pass description to lightbox mapping
+                desc_en: description, // Pass description to lightbox mapping
+                images: imagesArray,
+                imagesCount: imagesCount
+            });
+
+            // Build HTML row card
+            htmlContent += `
+                <div class="project-btn-card row-card" onclick="openGallery('${safeKey}')" id="proj-${safeKey}-card">
+                    <div class="project-card-thumb" id="thumb-container-${safeKey}">
+                        <img src="${imagesArray[0]}" alt="Preview" id="thumb-${safeKey}" class="animated-thumb">
+                    </div>
+                    <div class="project-card-content">
+                        <h5 class="project-title freelance-desc" id="proj-${safeKey}-title" style="margin-bottom:0.5rem; font-size: 1.05rem;">${folderName}</h5>
+                        <!-- Empty area for description -->
+                        <p class="project-short-desc" id="desc-${safeKey}" style="margin-bottom: 1rem; color: var(--tertiary); font-size: 0.95rem;">${description}</p>
+                        <span class="view-gallery-action code-font" id="gallery-${safeKey}" style="display:inline-flex; margin-top: auto;"><i class="fa-solid fa-circle-play"></i> GALLERY (${imagesCount})</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        container.innerHTML = htmlContent;
+    }
+}
+
+// Generate the UI directly on load
+generateProjectUI();
 
 // ==========================================
 // STATE MANAGEMENT & INITIALIZATION
@@ -1001,6 +1026,12 @@ async function handleContactSubmit(event) {
 function setupProjectThumbnails() {
     projectsData.forEach(project => {
         const thumbImg = document.getElementById(`thumb-${project.key}`);
+        
+        // Set initial valid image source
+        if (thumbImg && project.images && project.images.length > 0) {
+            thumbImg.src = project.images[0];
+        }
+
         if (!thumbImg || project.imagesCount <= 1) return;
 
         let currentImageIdx = 0;
@@ -1015,7 +1046,8 @@ function setupProjectThumbnails() {
             thumbImg.style.opacity = '0';
             
             setTimeout(() => {
-                thumbImg.src = `images/${project.key}/img_${currentImageIdx + 1}.jpg`;
+                // Use dynamic mapping from project.images array instead of hardcoded paths
+                thumbImg.src = project.images[currentImageIdx];
                 // Fade in once loaded
                 thumbImg.onload = () => {
                     thumbImg.style.opacity = '1';
