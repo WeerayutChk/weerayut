@@ -9,6 +9,7 @@
   "author": "Weerayut Chueakham",
   "license": "ISC",
   "dependencies": {
+    "jsdom": "^29.1.1",
     "sharp": "^0.34.5"
   }
 }

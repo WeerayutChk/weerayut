@@ -1,109 +1,90 @@
 const fs = require('fs');
 const path = require('path');
-const sharp = require('sharp'); // Added sharp for image compression
+const sharp = require('sharp'); // Make sure to run 'npm install sharp'
 
 const IMAGES_DIR = path.join(__dirname, 'images');
+const OPTIMIZED_DIR = path.join(__dirname, 'optimized_images');
 const OUTPUT_FILE = path.join(__dirname, 'image_data.js');
 
 const VALID_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif']);
-// Maximum width for images to save space
-const MAX_WIDTH = 1280; 
 
-// We use an async function to compress an image in-place
-async function processImage(filePath) {
-    const ext = path.extname(filePath).toLowerCase();
-    
-    // Skip GIFs as sharp doesn't animate them well without extra config, 
-    // and skip webp if we assume they are already compressed.
-    if (ext === '.gif') return;
-
-    try {
-        const stats = fs.statSync(filePath);
-        // Only process if file is larger than 300KB to save time on already small files
-        if (stats.size > 300 * 1024) {
-            const tempPath = filePath + '.tmp';
-            
-            await sharp(filePath)
-                .resize({ width: MAX_WIDTH, withoutEnlargement: true })
-                .jpeg({ quality: 80, force: false }) // force:false means it keeps png as png
-                .png({ quality: 80, force: false })
-                .webp({ quality: 80, force: false })
-                .toFile(tempPath);
-                
-            // Replace original with compressed version
-            fs.renameSync(tempPath, filePath);
-            return true; // Indicates it was compressed
-        }
-    } catch (err) {
-        console.error(`Error processing image ${filePath}:`, err.message);
-    }
-    return false;
+// Ensure optimized directory exists
+if (!fs.existsSync(OPTIMIZED_DIR)) {
+    fs.mkdirSync(OPTIMIZED_DIR, { recursive: true });
 }
 
-async function getImagesData(dirPath, globalStats) {
-    let imageData = {};
-
-    if (!fs.existsSync(dirPath)) {
-        return imageData;
+async function processImage(inputPath, relativePath, fileName) {
+    const parsedPath = path.parse(fileName);
+    const outFileName = `${parsedPath.name}.webp`; // Always output as webp
+    
+    // Create subfolder structure in optimized_images
+    const outDirPath = path.join(OPTIMIZED_DIR, relativePath);
+    if (!fs.existsSync(outDirPath)) {
+        fs.mkdirSync(outDirPath, { recursive: true });
     }
 
-    const items = fs.readdirSync(dirPath, { withFileTypes: true });
-    let currentDirFiles = [];
-    
-    for (const item of items) {
-        const fullPath = path.join(dirPath, item.name);
-        if (item.isDirectory()) {
-            // Recursively read subdirectories
-            const subData = await getImagesData(fullPath, globalStats);
-            imageData = { ...imageData, ...subData };
-        } else if (item.isFile()) {
-            if (VALID_EXTENSIONS.has(path.extname(item.name).toLowerCase())) {
-                // Process the image (compress if necessary)
-                const wasCompressed = await processImage(fullPath);
-                if (wasCompressed) globalStats.compressedCount++;
-                
-                currentDirFiles.push(item.name);
-            }
+    const outputPath = path.join(outDirPath, outFileName);
+
+    // Skip if the optimized file already exists (to save time on subsequent builds)
+    if (!fs.existsSync(outputPath)) {
+        try {
+            await sharp(inputPath)
+                .resize({ width: 1920, withoutEnlargement: true }) // Max width 1920px
+                .webp({ quality: 80 }) // 80% quality webp compression
+                .toFile(outputPath);
+            console.log(`[Optimized] ${path.join(relativePath, outFileName)}`);
+        } catch (err) {
+            console.error(`[Error] Failed to process ${inputPath}:`, err);
         }
     }
 
-    if (currentDirFiles.length > 0) {
-        // Use the deepest folder name as the key
-        const folderName = path.basename(dirPath);
-        
-        // Sort naturally
-        currentDirFiles.sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
-        
-        // Create relative paths from the base 'images' directory
-        imageData[folderName] = currentDirFiles.map(file => {
-            const relativePath = path.relative(__dirname, dirPath).replace(/\\/g, '/');
-            return `${relativePath}/${file}`;
-        });
-    }
-
-    return imageData;
+    // Return the relative web path for the frontend (e.g. "optimized_images/donaus/foo/bar.webp")
+    return `optimized_images/${relativePath.replace(/\\/g, '/')}/${outFileName}`;
 }
 
 async function build() {
-    console.log('Scanning and compressing images... (This might take a few minutes if there are many large images)');
+    console.log('Scanning and optimizing images... This may take a while the first time.');
     
     let tree = {};
     let totalImages = 0;
-    let globalStats = { compressedCount: 0 };
     
     if (fs.existsSync(IMAGES_DIR)) {
         const rootItems = fs.readdirSync(IMAGES_DIR, { withFileTypes: true });
         
         for (const item of rootItems) {
             if (item.isDirectory() && item.name !== 'logo') {
-                const categoryPath = path.join(IMAGES_DIR, item.name);
-                const projectsData = await getImagesData(categoryPath, globalStats);
+                const categoryName = item.name;
+                const categoryPath = path.join(IMAGES_DIR, categoryName);
                 
-                if (Object.keys(projectsData).length > 0) {
-                    tree[item.name] = projectsData;
-                    for (const proj in projectsData) {
-                        totalImages += projectsData[proj].length;
-                        console.log(` - [${item.name}] > [${proj}]: found ${projectsData[proj].length} images`);
+                const projects = fs.readdirSync(categoryPath, { withFileTypes: true });
+                tree[categoryName] = {};
+
+                for (const projFolder of projects) {
+                    if (projFolder.isDirectory()) {
+                        const projName = projFolder.name;
+                        const projPath = path.join(categoryPath, projName);
+                        
+                        const files = fs.readdirSync(projPath, { withFileTypes: true });
+                        
+                        // Filter valid images and sort naturally
+                        let imageFiles = files
+                            .filter(f => f.isFile() && VALID_EXTENSIONS.has(path.extname(f.name).toLowerCase()))
+                            .map(f => f.name)
+                            .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
+
+                        if (imageFiles.length > 0) {
+                            tree[categoryName][projName] = [];
+                            for (const imgName of imageFiles) {
+                                const inputPath = path.join(projPath, imgName);
+                                const relPath = path.join(categoryName, projName);
+                                
+                                // Process and get the new path
+                                const finalWebPath = await processImage(inputPath, relPath, imgName);
+                                tree[categoryName][projName].push(finalWebPath);
+                                totalImages++;
+                            }
+                            console.log(` - [${categoryName}] > [${projName}]: processed ${imageFiles.length} images`);
+                        }
                     }
                 }
             }
@@ -115,9 +96,8 @@ async function build() {
     
     fs.writeFileSync(OUTPUT_FILE, fileContent, 'utf8');
     
-    console.log(`\nBuild and Compression successful!`);
-    console.log(`Found ${totalImages} images mapped into categories.`);
-    console.log(`Successfully compressed ${globalStats.compressedCount} large images.`);
+    console.log(`\nBuild successful!`);
+    console.log(`Processed ${totalImages} images into 'optimized_images' folder.`);
     console.log(`Saved mappings to ${OUTPUT_FILE}`);
 }
 

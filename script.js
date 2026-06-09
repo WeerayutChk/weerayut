@@ -35,10 +35,12 @@ const translations = {
         "skill-g1-title": "HARDWARE & ELECTRONICS",
         "skill-g2-title": "FIRMWARE & MCU",
         "skill-g3-title": "SOFTWARE & WEB DEVELOPER",
+        "skill-g4-title": "MECHANICAL & ELECTRICAL",
 
         "skill-g1-desc": "การวางแผนระบบเชิงวิศวกรรม, ออกแบบโมเดล 3D CAD, เขียนแบบวงจร (Schematic) และออกแบบแผ่น PCB, การบัดกรี และประกอบตู้ควบคุม",
         "skill-g2-desc": "การเขียนโปรแกรมควบคุมไมโครคอนโทรลเลอร์ค่าย Arduino, ESP8266/ESP32, STM32 (HAL/LL), บอร์ด Raspberry Pi และการออกแบบการสื่อสารระหว่าง MCU",
         "skill-g3-desc": "พัฒนาหน้าเว็บและแอปพลิเคชัน (Fullstack Node.js/HTML/JS), ระบบ API รับส่งข้อมูลเซ็นเซอร์, จัดการระบบฐานข้อมูล SQL, ตลอดจนแผงควบคุมระบบคลาวด์",
+        "skill-g4-desc": "ทักษะการใช้เครื่องมือช่างพื้นฐาน และเรียนเสริมทักษะระบบไฟฟ้าภายในอาคาร",
 
         "location-text": "เชียงใหม่, ประเทศไทย",
         "profile-nickname": "วีรยุทธ เชื้อคำ (ต๋อง)",
@@ -124,10 +126,12 @@ const translations = {
         "skill-g1-title": "HARDWARE & ELECTRONICS",
         "skill-g2-title": "FIRMWARE & MCU",
         "skill-g3-title": "SOFTWARE & WEB DEVELOPER",
+        "skill-g4-title": "MECHANICAL & ELECTRICAL",
 
         "skill-g1-desc": "System planning, 3D CAD modeling, circuit design (Schematics) & PCB layout, soldering, and electrical control cabinet assembly.",
         "skill-g2-desc": "Firmware programming for Arduino, ESP8266/ESP32, STM32 (HAL/LL), Raspberry Pi boards, and designing multi-MCU communication protocols.",
         "skill-g3-desc": "Fullstack web and application development (HTML/JS/Node.js), API integration for real-time sensor data, SQL database systems, and cloud-based dashboards.",
+        "skill-g4-desc": "Proficiency in basic workshop tools (drilling, cutting, welding) and supplementary training in building electrical wiring systems.",
 
         "location-text": "Chiang Mai, Thailand",
         "profile-nickname": "Mr. Weerayut Chueakham (Wee)",
@@ -470,12 +474,7 @@ function applyLanguage(lang) {
         innoR3Container.appendChild(li);
     });
 
-    // Freelance Descriptions
-    document.getElementById("freelance-2025-desc").textContent = dict["freelance-2025-desc"];
-    document.getElementById("freelance-2024-desc").textContent = dict["freelance-2024-desc"];
-    document.getElementById("freelance-2023-desc").textContent = dict["freelance-2023-desc"];
-    document.getElementById("freelance-2022-desc").textContent = dict["freelance-2022-desc"];
-    document.getElementById("freelance-2021-desc").textContent = dict["freelance-2021-desc"];
+    // Freelance Descriptions (Now handled dynamically via PROJECT_DETAILS)
 
     // Education School & Degrees
     for (let i = 1; i <= 3; i++) {
@@ -487,11 +486,12 @@ function applyLanguage(lang) {
     document.getElementById("skill-g1-desc").textContent = dict["skill-g1-desc"];
     document.getElementById("skill-g2-desc").textContent = dict["skill-g2-desc"];
     document.getElementById("skill-g3-desc").textContent = dict["skill-g3-desc"];
+    document.getElementById("skill-g4-desc").textContent = dict["skill-g4-desc"];
 
     // Update dynamic project titles and descriptions in grid
     projectsData.forEach(p => {
         const titleEl = document.getElementById(`proj-${p.key}-title`);
-        const descEl = document.getElementById(`proj-${p.key}-desc`);
+        const descEl = document.getElementById(`desc-${p.key}`);
         if (titleEl && descEl) {
             titleEl.textContent = lang === "th" ? p.title_th : p.title_en;
             descEl.textContent = lang === "th" ? p.desc_th : p.desc_en;
@@ -829,7 +829,7 @@ const terminalTexts = {
         help: `คำสั่งที่รองรับ:
   <span class="text-primary">about</span>     - ข้อมูลแนะนำตัวโดยย่อของวีรยุทธ
   <span class="text-primary">skills</span>    - แสดงรายละเอียดระดับทักษะความสามารถ (Tech Stack)
-  <span class="text-primary">projects</span>  - แสดงรายชื่อผลงาน R&D หลักทั้ง 5 โครงการ
+  <span class="text-primary">projects</span>  - แสดงรายชื่อผลงานที่โดดเด่น (R&D และ Freelance)
   <span class="text-primary">contact</span>   - แสดงช่องทางการติดต่อ
   <span class="text-primary">clear</span>     - ล้างข้อความบนหน้าจอเทอร์มินัล
   <span class="text-primary">help</span>      - แสดงคู่มือการใช้งานนี้`,
@@ -844,14 +844,30 @@ const terminalTexts = {
   [4] STM32 (C HAL/LL)         ======================&gt;      [80%]
   [5] Raspberry Pi Embedded    =========================&gt;   [90%]
   [6] Fullstack Web & API      =======================&gt;     [85%]
-  [7] Cloud Dashboard / MQTT   =========================&gt;   [90%]`,
+  [7] Cloud Dashboard / MQTT   =========================&gt;   [90%]
+  [8] Mechanical & Electrical  ======================&gt;      [80%]
+  <span class="text-primary"><i>(พิมพ์ตัวเลข 1-8 แล้วกด Enter เพื่อดูรายละเอียด)</i></span>`,
 
-        projects: `<b>รายการผลงานหลัก (คลิกบนประวัติการทำงานเพื่อเปิดดูรูป):</b>
-  * 2023 - โครงการรถไฟฟ้าท่องเที่ยว จังหวัดน่าน (Nan Electric Tourist Shuttle)
-  * 2023 - โครงการพัฒนาระบบรถจักรยานยนต์ไฟฟ้า (Electric Motorcycle Development)
-  * 2023 - รถรางไฟฟ้าแห่กระทง มหาวิทยาลัยเชียงใหม่ (CMU Electric Tram for Loy Krathong)
-  * 2023 - ระบบโซล่าเซลล์ สวนหลวง (Suan Luang Solar Power System)
-  * 2023 - โครงการระบบอิเล็กทรอนิกส์ทางด่วน (Expressway Electronic System)`,
+        "1": `<b>[1] Hardware & PCB Design [90%]</b>\n- การวางแผนระบบเชิงวิศวกรรม (System Planning)\n- เขียนแบบวงจร (Schematic) และออกแบบแผ่น PCB\n- การบัดกรี ประกอบชิ้นส่วน และจัดเตรียมตู้ควบคุมไฟฟ้า`,
+        "2": `<b>[2] 3D CAD Modeling [85%]</b>\n- ออกแบบโมเดล 3D CAD ชิ้นส่วนกลไกและชิ้นส่วนเพื่อนำไปปรินต์ 3D\n- ออกแบบเคสหรือกล่องใส่บอร์ดวงจรอิเล็กทรอนิกส์ต่างๆ`,
+        "3": `<b>[3] Firmware (Arduino/ESP) [95%]</b>\n- เขียนโปรแกรมควบคุมไมโครคอนโทรลเลอร์ตระกูล Arduino, ESP8266, ESP32\n- ออกแบบระบบการรับส่งข้อมูลผ่านเครือข่าย WiFi, Bluetooth`,
+        "4": `<b>[4] STM32 (C HAL/LL) [80%]</b>\n- พัฒนาโปรแกรมสำหรับชิป STM32 ด้วยภาษา C ใช้งานร่วมกับไลบรารีระดับล่าง (HAL/LL)\n- จัดการระบบการทำงานแบบ Real-time และระบบจัดการหน่วยความจำ`,
+        "5": `<b>[5] Raspberry Pi Embedded [90%]</b>\n- ประยุกต์ใช้งานบอร์ด Raspberry Pi ด้วยระบบปฏิบัติการ Linux\n- เขียนสคริปต์ควบคุมการทำงานด้วย Python และ C`,
+        "6": `<b>[6] Fullstack Web & API [85%]</b>\n- พัฒนาเว็บแอปพลิเคชันด้วย HTML, CSS, JavaScript และ Node.js\n- สร้างและออกแบบ API เพื่อใช้รับส่งข้อมูลจากเซ็นเซอร์\n- จัดการระบบฐานข้อมูล SQL`,
+        "7": `<b>[7] Cloud Dashboard / MQTT [90%]</b>\n- พัฒนาหน้าจอแสดงผลข้อมูลและสั่งการอุปกรณ์จากระยะไกล (Web Dashboard)\n- ออกแบบระบบสื่อสารข้อมูลผ่านโปรโตคอล MQTT สำหรับระบบ IoT`,
+        "8": `<b>[8] Mechanical & Electrical [80%]</b>\n- ทักษะการใช้เครื่องมือช่างพื้นฐานสำหรับขึ้นรูปชิ้นงาน (เจาะ ตัด เชื่อม)\n- เรียนเสริมทักษะการเดินระบบไฟฟ้ากำลังภายในอาคารอย่างถูกต้องและปลอดภัย`,
+
+        projects: `<b>รายการผลงานหลัก (คลิกปุ่ม Gallery บนหน้าเว็บเพื่อเปิดดูรูป):</b>
+  [ Donaus R&D ]
+  * โครงการรถไฟฟ้าท่องเที่ยว จังหวัดน่าน
+  * รถรางไฟฟ้าแห่กระทง มหาวิทยาลัยเชียงใหม่
+  * โครงการพัฒนาระบบรถจักรยานยนต์ไฟฟ้า
+  * โครงการระบบอิเล็กทรอนิกส์ด่านเก็บเงินทางด่วน
+  [ Freelance ]
+  * ชุดเลี้ยงหนอนแมลงวันลายเสือ เกษตรแม่เหียะ
+  * ระบบโซล่าเซลล์ สวนหลวง
+  * เครื่องวัดและทดสอบคุณภาพน้ำ
+  * รถไฟฟ้าคนพิการ ศูนย์เวชศาสตร์ฟื้นฟู`,
 
         contact: `<b>ข้อมูลการติดต่อสำหรับงานและประสานงาน:</b>
   * Email: <a href="mailto:vrayut86@gmail.com" class="text-primary">vrayut86@gmail.com</a>
@@ -866,7 +882,7 @@ const terminalTexts = {
         help: `Supported Commands:
   <span class="text-primary">about</span>     - Short introduction of Weerayut
   <span class="text-primary">skills</span>    - Output detailed rating of key technical skills
-  <span class="text-primary">projects</span>  - List of the 5 major R&D projects
+  <span class="text-primary">projects</span>  - List of major R&D and Freelance projects
   <span class="text-primary">contact</span>   - Displays email, phone and other networks
   <span class="text-primary">clear</span>     - Clear terminal log screen
   <span class="text-primary">help</span>      - Shows this command handbook`,
@@ -881,14 +897,30 @@ Automation Control Systems Engineer & IoT Developer with 8 years of hybrid hardw
   [4] STM32 (C HAL/LL)         ======================&gt;      [80%]
   [5] Raspberry Pi Embedded    =========================&gt;   [90%]
   [6] Fullstack Web & API      =======================&gt;     [85%]
-  [7] Cloud Dashboard / MQTT   =========================&gt;   [90%]`,
+  [7] Cloud Dashboard / MQTT   =========================&gt;   [90%]
+  [8] Mechanical & Electrical  ======================&gt;      [80%]
+  <span class="text-primary"><i>(Type a number 1-8 and press Enter to view details)</i></span>`,
 
-        projects: `<b>MAJOR PROJECTS COMPLETED (Click on Experience cards to view images):</b>
-  * 2023 - Nan Province Electric Tourist Shuttle
-  * 2023 - Electric Motorcycle Development Project
-  * 2023 - CMU Electric Tram for Loy Krathong Parade
-  * 2023 - Suan Luang Solar Power System & Dashboard
-  * 2023 - Expressway Electronic System & Interface`,
+        "1": `<b>[1] Hardware & PCB Design [90%]</b>\n- Engineering system planning\n- Schematic drafting and PCB layout design\n- Soldering, assembly, and electrical control cabinet wiring`,
+        "2": `<b>[2] 3D CAD Modeling [85%]</b>\n- 3D CAD modeling for mechanical parts and 3D printing\n- Enclosure design for electronic circuit boards`,
+        "3": `<b>[3] Firmware (Arduino/ESP) [95%]</b>\n- Firmware development for Arduino, ESP8266, and ESP32 microcontrollers\n- Implementing WiFi, Bluetooth, and sensor communication protocols`,
+        "4": `<b>[4] STM32 (C HAL/LL) [80%]</b>\n- STM32 firmware programming in C utilizing HAL and Low-Layer APIs\n- Implementing efficient real-time event handling`,
+        "5": `<b>[5] Raspberry Pi Embedded [90%]</b>\n- Utilizing Raspberry Pi on Linux ecosystems\n- Writing control scripts and automations in Python and C`,
+        "6": `<b>[6] Fullstack Web & API [85%]</b>\n- Fullstack web development using HTML, JS, and Node.js\n- Designing RESTful APIs for real-time sensor data integration\n- SQL database management`,
+        "7": `<b>[7] Cloud Dashboard / MQTT [90%]</b>\n- Developing remote monitoring dashboards and cloud interfaces\n- Designing MQTT communication architectures for robust IoT networks`,
+        "8": `<b>[8] Mechanical & Electrical [80%]</b>\n- Proficiency in workshop tools for fabrication (drilling, cutting, welding)\n- Supplementary training in standard building electrical wiring`,
+
+        projects: `<b>MAJOR PROJECTS COMPLETED (Click on Gallery buttons to view images):</b>
+  [ Donaus R&D ]
+  * Nan Province Electric Tourist Shuttle
+  * CMU Electric Tram for Loy Krathong Parade
+  * Electric Motorcycle Development Project
+  * Expressway Electronic System & Interface
+  [ Freelance ]
+  * Smart Farm System for BSF Breeding
+  * Suan Luang Solar Power System
+  * Water Quality Testing System
+  * Electric Wheelchair for Rehabilitation Center`,
 
         contact: `<b>CONTACT & NETWORKS:</b>
   * Email: <a href="mailto:vrayut86@gmail.com" class="text-primary">vrayut86@gmail.com</a>
