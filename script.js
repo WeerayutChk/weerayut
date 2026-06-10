@@ -954,6 +954,7 @@ const terminalTexts = {
   <span class="text-primary">skills</span>    - แสดงรายละเอียดระดับทักษะความสามารถ (Tech Stack)
   <span class="text-primary">projects</span>  - แสดงรายชื่อผลงานที่โดดเด่น (R&D และ Freelance)
   <span class="text-primary">contact</span>   - แสดงช่องทางการติดต่อ
+  <span class="text-primary">go -[name]</span>- เลื่อนหน้าจอไปยังหัวข้อที่ระบุ (เช่น go -skills)
   <span class="text-primary">clear</span>     - ล้างข้อความบนหน้าจอเทอร์มินัล
   <span class="text-primary">help</span>      - แสดงคู่มือการใช้งานนี้`,
 
@@ -1007,6 +1008,7 @@ const terminalTexts = {
   <span class="text-primary">skills</span>    - Output detailed rating of key technical skills
   <span class="text-primary">projects</span>  - List of major R&D and Freelance projects
   <span class="text-primary">contact</span>   - Displays email, phone and other networks
+  <span class="text-primary">go -[name]</span>- Scroll page to a specific section (e.g. go -skills)
   <span class="text-primary">clear</span>     - Clear terminal log screen
   <span class="text-primary">help</span>      - Shows this command handbook`,
 
@@ -1080,6 +1082,45 @@ function handleTerminalSubmit() {
 
     if (cmd === "clear") {
         terminalHistory.innerHTML = "";
+        return;
+    }
+
+    if (cmd === "reload") {
+        appendTerminalLine(`<span class="text-green">${currentLanguage === 'th' ? 'กำลังโหลดหน้าเว็บใหม่...' : 'Reloading page...'}</span>`);
+        setTimeout(() => location.reload(), 500);
+        return;
+    }
+
+    if (cmd.startsWith("go -")) {
+        const target = cmd.substring(4).trim();
+
+        if (target === "top") {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            appendTerminalLine(`<span class="text-green">${currentLanguage === 'th' ? 'เลื่อนขึ้นบนสุด...' : 'Scrolling to top...'}</span>`);
+        } else if (target === "bottom") {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            appendTerminalLine(`<span class="text-green">${currentLanguage === 'th' ? 'เลื่อนลงล่างสุด...' : 'Scrolling to bottom...'}</span>`);
+        } else {
+            const element = document.getElementById(target);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                if (currentLanguage === 'th') {
+                    appendTerminalLine(`<span class="text-green">กำลังนำทางไปยังหัวข้อ '${target}'...</span>`);
+                } else {
+                    appendTerminalLine(`<span class="text-green">Navigating to section '${target}'...</span>`);
+                }
+            } else {
+                if (currentLanguage === 'th') {
+                    appendTerminalLine(`<span class="text-red">ข้อผิดพลาด: ไม่พบเป้าหมาย '${target}' (เช่น go -skills, go -top)</span>`);
+                } else {
+                    appendTerminalLine(`<span class="text-red">Error: Target '${target}' not found. (Try go -skills, go -top)</span>`);
+                }
+            }
+        }
+        
+        setTimeout(() => {
+            terminalBody.scrollTop = terminalBody.scrollHeight;
+        }, 10);
         return;
     }
 
@@ -1222,3 +1263,29 @@ function setupProjectThumbnails() {
 
 // Initialize thumbnail animations
 setupProjectThumbnails();
+
+// Setup Terminal Popup Toggle
+function setupTerminalPopup() {
+    const fab = document.getElementById('terminal-fab');
+    const popup = document.getElementById('terminal-popup');
+    const closeBtn = document.getElementById('term-close-btn');
+    const closeIcon = document.getElementById('term-close-icon');
+
+    if (!fab || !popup) return;
+
+    function toggleTerminal() {
+        popup.classList.toggle('active');
+        if (popup.classList.contains('active')) {
+            setTimeout(() => {
+                const input = document.getElementById('terminal-input');
+                if (input) input.focus();
+            }, 300);
+        }
+    }
+
+    fab.addEventListener('click', toggleTerminal);
+    if (closeBtn) closeBtn.addEventListener('click', () => popup.classList.remove('active'));
+    if (closeIcon) closeIcon.addEventListener('click', () => popup.classList.remove('active'));
+}
+
+setupTerminalPopup();

@@ -359,17 +359,71 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     margin-bottom: 1.5rem;
     background-color: var(--neutral);
+    position: relative;
 }
 
 .profile-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform var(--transition-medium);
+    transition: transform var(--transition-medium), opacity var(--transition-medium);
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.profile-card:hover .profile-frame img {
-    transform: scale(1.05);
+.profile-frame .base-img {
+    /* Base image is static */
+}
+
+.profile-frame .hover-img {
+    opacity: 1;
+    clip-path: inset(0 0 100% 0);
+    animation: scannerReveal 8s infinite alternate ease-in-out;
+}
+
+.laser-scanner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+    z-index: 5;
+    animation: scannerLaser 8s infinite alternate ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.laser-scanner::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    background: linear-gradient(to bottom, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.02) 20%, 
+        rgba(255, 255, 255, 0.15) 45%, 
+        rgba(255, 255, 255, 0.8) 50%, 
+        rgba(255, 255, 255, 0.15) 55%, 
+        rgba(255, 255, 255, 0.02) 80%, 
+        rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+}
+
+@keyframes scannerReveal {
+    0%, 15% { clip-path: inset(0 0 100% 0); }
+    45%, 100% { clip-path: inset(0 0 0% 0); }
+}
+
+@keyframes scannerLaser {
+    0%, 5% { top: 0%; opacity: 0; }
+    15% { top: 0%; opacity: 1; }
+    45%, 50% { top: 100%; opacity: 1; }
+    65%, 100% { top: 100%; opacity: 0; }
 }
 
 .profile-info {
@@ -458,18 +512,6 @@ a.contact-value:hover {
 /* TIMELINE FOR WORK EXPERIENCE */
 .timeline {
     position: relative;
-    padding-left: 2.5rem;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 10px;
-    top: 5px;
-    width: 4px;
-    height: calc(100% - 10px);
-    background-color: var(--neutral);
-    border-radius: 2px;
 }
 
 .timeline-item {
@@ -479,18 +521,6 @@ a.contact-value:hover {
 
 .timeline-item:last-child {
     margin-bottom: 0;
-}
-
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: calc(-2.5rem + 6px);
-    top: 15px;
-    width: 12px;
-    height: 12px;
-    background-color: var(--primary);
-    border-radius: 50%;
-    z-index: 2;
 }
 
 .timeline-badge {
@@ -973,11 +1003,56 @@ a.company-logo.link-logo:hover {
     transition: width 1.2s cubic-bezier(0.1, 0.8, 0.1, 1);
 }
 
+/* TERMINAL POPUP & FAB */
+.terminal-fab-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--tertiary);
+    color: var(--secondary);
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.terminal-fab-btn:hover {
+    transform: scale(1.1);
+    background-color: var(--primary);
+}
+
+.terminal-popup-container {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 650px;
+    max-width: calc(100vw - 60px);
+    z-index: 1000;
+    transform: translateY(20px) scale(0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.terminal-popup-container.active {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
 /* TERMINAL INTERACTIVE CLI SHADES */
 .terminal-card-shell {
     background-color: var(--bg-term);
     border: 2px solid var(--border-color);
-    box-shadow: 6px 6px 0px var(--shadow-color);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 }
 
 .terminal-shell-header {
@@ -1499,15 +1574,6 @@ a.company-logo.link-logo:hover {
 }
 
 @media (max-width: 480px) {
-    .timeline {
-        padding-left: 1.5rem;
-    }
-    .timeline::before {
-        left: 5px;
-    }
-    .timeline-item::before {
-        left: calc(-1.5rem + 1px);
-    }
     .timeline-badge {
         left: 1rem;
         top: -12px;
