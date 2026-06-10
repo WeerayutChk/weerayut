@@ -37,14 +37,14 @@ const translations = {
         "skill-g3-title": "SOFTWARE & WEB DEVELOPER",
         "skill-g4-title": "MECHANICAL & ELECTRICAL",
 
-        "skill-g1-desc": "การวางแผนระบบเชิงวิศวกรรม, ออกแบบโมเดล 3D CAD, เขียนแบบวงจร (Schematic) และออกแบบแผ่น PCB, การบัดกรี และประกอบตู้ควบคุม",
-        "skill-g2-desc": "การเขียนโปรแกรมควบคุมไมโครคอนโทรลเลอร์ค่าย Arduino, ESP8266/ESP32, STM32 (HAL/LL), บอร์ด Raspberry Pi และการออกแบบการสื่อสารระหว่าง MCU",
+        "skill-g1-desc": "การวางแผนระบบเชิงวิศวกรรม, ออกแบบโมเดล 3D CAD, เขียนแบบวงจร และออกแบบแผ่น PCB, การบัดกรี และประกอบตู้ควบคุม",
+        "skill-g2-desc": "การเขียนโปรแกรมควบคุมไมโครคอนโทรลเลอร์ค่าย Arduino, ESP8266/ESP32, STM32, บอร์ด Raspberry Pi และการออกแบบการสื่อสารระหว่าง MCU",
         "skill-g3-desc": "พัฒนาหน้าเว็บและแอปพลิเคชัน (Fullstack Node.js/HTML/JS), ระบบ API รับส่งข้อมูลเซ็นเซอร์, จัดการระบบฐานข้อมูล SQL, ตลอดจนแผงควบคุมระบบคลาวด์",
         "skill-g4-desc": "ทักษะการใช้เครื่องมือช่างพื้นฐาน และเรียนเสริมทักษะระบบไฟฟ้าภายในอาคาร",
 
         "location-text": "เชียงใหม่, ประเทศไทย",
         "profile-nickname": "",
-        "profile-summary": "วีรยุทธ เชื้อคำ (ต๋อง) วิศวกรระบบควบคุมอัตโนมัติ และนักพัฒนา IoT ที่ชื่นชอบการเชื่อมต่อโลกของอุปกรณ์ฮาร์ดแวร์เข้ากับซอฟต์แวร์ ด้วยประสบการณ์การทำงานกว่า 8 ปี มีความเชี่ยวชาญในการสร้างสรรค์ระบบแบบ Hybrid System อย่างครบวงจร (End-to-End) จุดแข็งคือความสามารถในการดูแลโปรเจกต์ตั้งแต่จุดเริ่มต้น ไม่ว่าจะเป็นการออกแบบแผงวงจรอิเล็กทรอนิกส์ การเขียนโปรแกรมฝังตัว (Firmware) บนไมโครคอนโทรลเลอร์ ไปจนถึงการพัฒนาระบบหลังบ้านและหน้าเว็บแดชบอร์ด (Web Application) เพื่อให้ผู้ใช้งานสามารถควบคุมและติดตามข้อมูลเซ็นเซอร์ได้แบบ Real-time ผ่านอินเทอร์เน็ต ผมมีความตั้งใจที่จะนำเทคโนโลยีมาประยุกต์ใช้เพื่อแก้ปัญหาทางวิศวกรรมที่ซับซ้อน และเปลี่ยนไอเดียให้กลายเป็นระบบที่สามารถใช้งานได้จริงในระดับอุตสาหกรรม",
+        "profile-summary": "วีรยุทธ เชื้อคำ (ต๋อง) วิศวกรระบบควบคุมอัตโนมัติ และนักพัฒนาอุปกรณ์ IoT ที่มีความชื่นชอบในการเชื่อมต่อโลกของอุปกรณ์ฮาร์ดแวร์เข้ากับซอฟต์แวร์ ด้วยประสบการณ์การทำงานกว่า 8 ปี มีความเชี่ยวชาญในการสร้างสรรค์ระบบแบบ Hybrid System ครบวงจร จุดแข็งคือความสามารถในการดูแลโปรเจกต์ตั้งแต่จุดเริ่มต้น ไม่ว่าจะเป็นการออกแบบแผงวงจรอิเล็กทรอนิกส์ การเขียนโปรแกรมฝังตัว Firmware บนไมโครคอนโทรลเลอร์ไปจนถึงการพัฒนาระบบหลังบ้าน และหน้าเว็บแดชบอร์ด เพื่อให้ผู้ใช้งานสามารถควบคุม และติดตามข้อมูลเซ็นเซอร์ได้แบบ Real-time ผ่านอินเทอร์เน็ต ผมมีความตั้งใจที่จะนำเทคโนโลยีมาประยุกต์ใช้เพื่อแก้ปัญหาทางวิศวกรรมที่ซับซ้อน และเปลี่ยนไอเดียให้กลายเป็นระบบที่สามารถใช้งานได้จริงในระดับอุตสาหกรรม เป้าหมายในการพัฒนาตนเองในระยะต่อไปคือการนำ AI ฝังตัวลงในอุปกรณ์ เพื่อให้อุปกรณ์สามารถคิดและโต้ตอบกับผู้ใช้งานได้ครับ",
 
         "gallery-company": "บันทึกผลงาน",
         "freelance-company": "นักพัฒนาอิสระ",
@@ -79,7 +79,7 @@ const translations = {
         ],
         "innoedge-r3-title": "Technical Support Engineer (วิศวกรสนับสนุนทางเทคนิค)",
         "innoedge-r3-duties": [
-            "ผู้ช่วยสอน (Teaching Assistant) วิชาระบบสมองกลฝังตัว (Embedded Systems) ที่วิทยาลัยศิลปะ สื่อ และเทคโนโลยี (CAMT) มหาวิทยาลัยเชียงใหม่",
+            "ผู้ช่วยสอน วิชาระบบสมองกลฝังตัว ที่วิทยาลัยศิลปะ สื่อ และเทคโนโลยี (CAMT) มหาวิทยาลัยเชียงใหม่",
             "ผู้ช่วยสนับสนุนโครงการ ออกแบบสถาปัตยกรรมระบบ จัดทำโปรแกรมควบคุม และระบบสื่อสารเครือข่ายระหว่างไมโครคอนโทรลเลอร์ คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่"
         ],
 
@@ -141,7 +141,7 @@ const translations = {
 
         "location-text": "Chiang Mai, Thailand",
         "profile-nickname": "",
-        "profile-summary": "Mr. Weerayut Chueakham (Wee), Automation Control Systems Engineer and IoT Developer with over 8 years of experience, passionate about bridging the physical world of hardware with intelligent software. My core strength lies in developing comprehensive hybrid systems from the ground up (End-to-End). I am highly capable of managing every phase of a project, including electronic circuit design (PCB), microcontroller firmware development, and building robust backend and interactive web dashboards. This full-stack approach allows users to seamlessly monitor and control hardware devices in real-time over the internet. I am dedicated to solving complex engineering challenges and transforming innovative ideas into practical, industrial-grade solutions.",
+        "profile-summary": "Mr. Weerayut Chueakham (Wee), Automation Control Systems Engineer and IoT Device Developer, passionate about bridging the physical world of hardware with software. With over 8 years of experience, I specialize in creating comprehensive Hybrid Systems from end-to-end. My core strength lies in managing projects from inception—whether it's designing electronic circuit boards, writing embedded firmware on microcontrollers, or developing backend systems and web dashboards that allow users to control and monitor sensor data in real-time over the internet. I am dedicated to applying technology to solve complex engineering problems and transforming ideas into practical, industrial-grade systems. My next personal development goal is to integrate embedded AI into devices, enabling them to think and interact with users intelligently.",
 
         "gallery-company": "Project Galleries",
         "freelance-company": "Independent Engineering & Software Contracts",
