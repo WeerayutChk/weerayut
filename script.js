@@ -21,9 +21,9 @@ const translations = {
         "section-contact": "ส่งข้อความติดต่อ",
 
         "lang-en-title": "ภาษาอังกฤษ",
-        "lang-en-level": "Intermediate (ระดับปานกลาง)",
+        "lang-en-level": "ระดับปานกลาง",
         "lang-th-title": "ภาษาไทย",
-        "lang-th-level": "Native Language (เจ้าของภาษา)",
+        "lang-th-level": "เจ้าของภาษา",
 
         "contact-card-title": "SEND_MESSAGE.sh",
         "contact-lbl-name": "ชื่อผู้ติดต่อ / Sender Name",
@@ -43,11 +43,17 @@ const translations = {
         "skill-g4-desc": "ทักษะการใช้เครื่องมือช่างพื้นฐาน และเรียนเสริมทักษะระบบไฟฟ้าภายในอาคาร",
 
         "location-text": "เชียงใหม่, ประเทศไทย",
-        "profile-nickname": "วีรยุทธ เชื้อคำ (ต๋อง)",
-        "profile-summary": "วิศวกรระบบควบคุมอัตโนมัติ และนักพัฒนา IoT ที่ชื่นชอบการเชื่อมต่อโลกของอุปกรณ์ฮาร์ดแวร์เข้ากับซอฟต์แวร์ ด้วยประสบการณ์การทำงานกว่า 8 ปี มีความเชี่ยวชาญในการสร้างสรรค์ระบบแบบ Hybrid System อย่างครบวงจร (End-to-End) จุดแข็งคือความสามารถในการดูแลโปรเจกต์ตั้งแต่จุดเริ่มต้น ไม่ว่าจะเป็นการออกแบบแผงวงจรอิเล็กทรอนิกส์ การเขียนโปรแกรมฝังตัว (Firmware) บนไมโครคอนโทรลเลอร์ ไปจนถึงการพัฒนาระบบหลังบ้านและหน้าเว็บแดชบอร์ด (Web Application) เพื่อให้ผู้ใช้งานสามารถควบคุมและติดตามข้อมูลเซ็นเซอร์ได้แบบ Real-time ผ่านอินเทอร์เน็ต ผมมีความตั้งใจที่จะนำเทคโนโลยีมาประยุกต์ใช้เพื่อแก้ปัญหาทางวิศวกรรมที่ซับซ้อน และเปลี่ยนไอเดียให้กลายเป็นระบบที่สามารถใช้งานได้จริงในระดับอุตสาหกรรม",
+        "profile-nickname": "",
+        "profile-summary": "วีรยุทธ เชื้อคำ (ต๋อง) วิศวกรระบบควบคุมอัตโนมัติ และนักพัฒนา IoT ที่ชื่นชอบการเชื่อมต่อโลกของอุปกรณ์ฮาร์ดแวร์เข้ากับซอฟต์แวร์ ด้วยประสบการณ์การทำงานกว่า 8 ปี มีความเชี่ยวชาญในการสร้างสรรค์ระบบแบบ Hybrid System อย่างครบวงจร (End-to-End) จุดแข็งคือความสามารถในการดูแลโปรเจกต์ตั้งแต่จุดเริ่มต้น ไม่ว่าจะเป็นการออกแบบแผงวงจรอิเล็กทรอนิกส์ การเขียนโปรแกรมฝังตัว (Firmware) บนไมโครคอนโทรลเลอร์ ไปจนถึงการพัฒนาระบบหลังบ้านและหน้าเว็บแดชบอร์ด (Web Application) เพื่อให้ผู้ใช้งานสามารถควบคุมและติดตามข้อมูลเซ็นเซอร์ได้แบบ Real-time ผ่านอินเทอร์เน็ต ผมมีความตั้งใจที่จะนำเทคโนโลยีมาประยุกต์ใช้เพื่อแก้ปัญหาทางวิศวกรรมที่ซับซ้อน และเปลี่ยนไอเดียให้กลายเป็นระบบที่สามารถใช้งานได้จริงในระดับอุตสาหกรรม",
+
+        "gallery-company": "บันทึกผลงาน",
+        "freelance-company": "นักพัฒนาอิสระ",
+        "donaus-company": "บริษัท ดลอัส จำกัด",
+        "innoedge-company": "บริษัท อินโนเอดจ์ โกโก จำกัด",
 
         // Job: Donaus
-        "donaus-title": "Product R&D Engineer (วิศวกรวิจัยและพัฒนาผลิตภัณฑ์)",
+        "donaus-title": "Product R&D Engineer",
+        "donaus-title-th": "",
         "donaus-duties": [
             "วิจัยและวิเคราะห์ตลาด เก็บข้อมูลความต้องการจากผู้ใช้งาน ประเมินความเป็นไปได้ในการพัฒนาผลิตภัณฑ์ใหม่",
             "ออกแบบระบบครบวงจร ตั้งแต่ ฮาร์ดแวร์, ระบบสื่อสารเครือข่าย ส่วนแสดงผล และส่วนติดต่อผู้ใช้งาน (UI/UX)",
@@ -59,7 +65,7 @@ const translations = {
 
         // Job: Innoedge
         "innoedge-title": "Project Manager & Technical Engineer",
-        "innoedge-r1-title": "Project Manager (ผู้จัดการโครงการ)",
+        "innoedge-r1-title": "Project Manager",
         "innoedge-r1-duties": [
             "บริหารจัดการ และประสานงานโครงการร่วมกับหน่วยงานบริการทางการแพทย์ และควบคุมการทำงานของทีมพัฒนาภายนอก (Outsource)",
             "วางแผน และบริหารกรอบเวลาการดำเนินงานของโครงการ (Timeline & Milestone)",
@@ -78,7 +84,7 @@ const translations = {
         ],
 
         // Freelance
-        "freelance-title": "Freelance Developer (นักพัฒนาอิสระ)",
+        "freelance-title": "Freelance Developer",
         "freelance-2025-desc": "ชุดอุปกรณ์ทดสอบ และฝึกการทรงตัว ของผู้ป่วยกายภาพ ศูนย์เวชศาสตร์ฟื้นฟู (ดำเนินงานในปี 2568)",
         "freelance-2024-desc": "ชุดอุปกรณ์ Smart Farm เพาะเลี้ยงหนอนแมลงวันลายเสือ วิทยาลัยนานาชาตินวัตกรรมดิจิทัล (ดำเนินงานในปี 2567)",
         "freelance-2023-desc": "ระบบวัดทดสอบคุณภาพน้ำ บริษัท เพชรหิรัญ เอ็นจิเนียริ่ง เซอร์วิส จำกัด (ดำเนินงานในปี 2566)",
@@ -134,11 +140,17 @@ const translations = {
         "skill-g4-desc": "Proficiency in basic workshop tools (drilling, cutting, welding) and supplementary training in building electrical wiring systems.",
 
         "location-text": "Chiang Mai, Thailand",
-        "profile-nickname": "Mr. Weerayut Chueakham (Wee)",
-        "profile-summary": "I am an Automation Control Systems Engineer and IoT Developer with over 8 years of experience, passionate about bridging the physical world of hardware with intelligent software. My core strength lies in developing comprehensive hybrid systems from the ground up (End-to-End). I am highly capable of managing every phase of a project, including electronic circuit design (PCB), microcontroller firmware development, and building robust backend and interactive web dashboards. This full-stack approach allows users to seamlessly monitor and control hardware devices in real-time over the internet. I am dedicated to solving complex engineering challenges and transforming innovative ideas into practical, industrial-grade solutions.",
+        "profile-nickname": "",
+        "profile-summary": "Mr. Weerayut Chueakham (Wee), Automation Control Systems Engineer and IoT Developer with over 8 years of experience, passionate about bridging the physical world of hardware with intelligent software. My core strength lies in developing comprehensive hybrid systems from the ground up (End-to-End). I am highly capable of managing every phase of a project, including electronic circuit design (PCB), microcontroller firmware development, and building robust backend and interactive web dashboards. This full-stack approach allows users to seamlessly monitor and control hardware devices in real-time over the internet. I am dedicated to solving complex engineering challenges and transforming innovative ideas into practical, industrial-grade solutions.",
+
+        "gallery-company": "Project Galleries",
+        "freelance-company": "Independent Engineering & Software Contracts",
+        "donaus-company": "Donaus Co., Ltd.",
+        "innoedge-company": "Innoedge Gogo Co., Ltd.",
 
         // Job: Donaus
         "donaus-title": "Product R&D Engineer",
+        "donaus-title-th": "",
         "donaus-duties": [
             "Gathered user requirements, analyzed market trends, and conducted feasibility studies for new product lines.",
             "Designed comprehensive systems encompassing hardware, network communication, user interfaces (UI/UX), and dashboard displays.",
@@ -193,19 +205,122 @@ const translations = {
 
 // เขียนคำอธิบายผลงาน (Description) ที่นี่ โดยใช้ "ชื่อโฟลเดอร์" เป็น Key
 const PROJECT_DETAILS = {
-    "จัดแสดงสินค้า Uniserv มช": "นำเสนอผลงาน นวัตกรรม และผลิตภัณฑ์ที่เกี่ยวข้องกับเทคโนโลยีการลดมลพิษ ให้กับบุคลากรหน่วยงานภาครัฐ และภาคเอกชน ",
-    "จัดแสดงสินค้า ศูนย์นวัตกรรม ลำปาง": "นำเสนอผลงาน นวัตกรรม และผลิตภัณฑ์ที่เกี่ยวข้องกับเทคโนโลยีรถไฟฟ้า ให้กับบุคลากรหน่วยงานภาครัฐ และภาคเอกชน",
-    "ชุดเก็บข้อมูลการใช้พลังงานในอาคาร": "ชุดเก็บบันทึกการใช้พลังงานภายในอาคาร เพื่อนำไปวิเคราะห์ และวางแผนการติดตั้งโซล่าเซลล์ให้เหมาะสมกับการใช้งาน",
-    "ระบบพ่นละอองน้ำ ด่านเก็บค่าผ่านทาง": "ออกแบบและติดตั้งระบบทดสอบอุปกรณ์เซนเซอร์ ตัวควบคุมทางกายภาพ และการควบคุมระยะไกลบนทางด่วน",
-    "รถมอไซไฟฟ้า": "วิจัย ออกแบบ และพัฒนาเฟิร์มแวร์ระบบควบคุมการเปิดปิดรถไฟฟ้าแบบ Key-less และระบบจัดการสลับใช้งานแบตเตอรี่",
-    "รถรางไฟฟ้าแห่กระทง มช": "พัฒนาระบบขับเคลื่อนไฟฟ้าและการควบคุมพลังงานของรถรางประดับขบวนแห่กระทง มหาวิทยาลัยเชียงใหม่",
-    "รถราง และรถสามล้อไฟฟ้า เทศบาลเมืองน่าน": "ออกแบบชุดจอแสดงผลชื่อสถาณี วางระบบควบคุมยานยนต์ไฟฟ้า และเว็บแอพพลิเคชัน สำหรับติดตามรถรับส่งนักท่องเที่ยวในเขตเมืองเก่า จังหวัดน่าน",
-    "ระบบไฟโซล่าเซลสวนหลวง ร.9": "ติดตั้งระบบควบคุมพลังงานแสงอาทิตย์ และ Energy Dashboard ที่สามารถควบคุมการเปิดปิดไฟส่องสว่างจากโทรศัพท์มือถือได้",
-    "ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู": "ชุดอุปกรณ์ทดสอบ และฝึกการทรงตัว ของผู้ป่วยกายภาพ ศูนย์เวชศาสตร์ฟื้นฟู",
-    "ชุดเลี้ยงหนอนแมลงวันลายเสือ เกษตร แม่เหียะ": "ชุดอุปกรณ์ Smart Farm เพาะเลี้ยงหนอนแมลงวันลายเสือ วิทยาลัยนานาชาตินวัตกรรมดิจิทัล",
-    "ชุดเซ็นเซอร์ตรวจวัดคุณภาพน้ำ": "ระบบวัดทดสอบคุณภาพน้ำ บริษัท เพชรหิรัญ เอ็นจิเนียริ่ง เซอร์วิส จำกัด",
-    "ระบบ Smart Power Station": "บริษัท ตองแปด โลจิสติกส์ จำกัด",
-    "ชุด Gateway sensor": "ออกแบบ และจัดทำชุด Gateway sensor และชุด Temp Alert บริษัท ไอเดีย เฮ้าส์ เซ็นเตอร์ จำกัด"
+    // ==========================================
+    // 🏢 หมวดผลงานบริษัท (Donaus R&D)
+    // ==========================================
+    "donaus": {
+        "จัดอบรมรถไฟฟ้า ลำปาง": {
+            desc_th: "วิทยากรให้ความรู้ในเรื่องของรถไฟฟ้า ชุดควบคุมการทำงาน วิธีการตรวจสอบอุปกรณ์ และการแก้ปัญหากับเหตุขัดข้อง ที่ศูนย์นวัตกรรมลำปาง",
+            title_en: "EV Training Seminar in Lampang",
+            desc_en: "Served as a guest speaker to educate attendees on electric vehicles, control systems, equipment diagnostics, and troubleshooting procedures at the Lampang Innovation Center."
+        },
+        "จัดแสดงสินค้า Uniserv มช": {
+            desc_th: "นำเสนอผลงาน นวัตกรรม และผลิตภัณฑ์ที่เกี่ยวข้องกับเทคโนโลยีการลดมลพิษ ลดฝุ่น PM2.5 ระบบตรวจจับการเกิดไฟป่าบนดอยสุเทพ ระบบแจ้งเตือนระดับน้ำก่อนเกิดอุทกภัย ให้กับบุคลากรหน่วยงานภาครัฐ และภาคเอกชน",
+            title_en: "Uniserv CMU Innovation Exhibition",
+            desc_en: "Presented innovations and products related to pollution reduction, PM2.5 mitigation, Doi Suthep forest fire detection systems, and flood early warning systems to public and private sector personnel."
+        },
+        "จัดแสดงสินค้า ศูนย์นวัตกรรม ลำปาง": {
+            desc_th: "นำเสนอผลงาน นวัตกรรม และผลิตภัณฑ์ที่เกี่ยวข้องกับเทคโนโลยีรถไฟฟ้า ให้กับบุคลากรหน่วยงานภาครัฐ และภาคเอกชน",
+            title_en: "Lampang Innovation Center Exhibition",
+            desc_en: "Presented EV technology innovations and products to government and private sector representatives."
+        },
+        "ชุดเก็บข้อมูลการใช้พลังงานในอาคาร": {
+            desc_th: "ชุดเก็บบันทึกการใช้พลังงานภายในอาคาร เพื่อนำไปวิเคราะห์ขนาดของแบตเตอรี่ กำลังไฟฟ้าขั้นต่ำที่จะติดตั้ง และวางแผนการติดตั้งโซล่าเซลล์ให้เหมาะสมกับการใช้งาน",
+            title_en: "Building Energy Monitoring System",
+            desc_en: "A building energy consumption monitoring system used to analyze optimal battery sizing, minimum power requirements, and solar panel installation planning."
+        },
+        "ปรับปรุงระบบไฟโซล่าเซลสวนหลวง ร.9": {
+            desc_th: "ปรับปรุงระบบควบคุมพลังงาน และจัดทำหน้า Dashboard สำหรับควบคุมการเปิดปิดไฟส่องสว่างของสวนหลวง ร.9",
+            title_en: "Suan Luang Rama IX Solar Lighting System Upgrade",
+            desc_en: "Upgraded the energy control system and developed a monitoring Dashboard for controlling the solar lighting network at Suan Luang Rama IX public park."
+        },
+        "รถจักรยานยนต์ไฟฟ้า": {
+            desc_th: "วิจัย ออกแบบ และพัฒนาเฟิร์มแวร์ระบบควบคุมการเปิดปิดรถไฟฟ้าแบบ Key-less ระบบติดตามด้วย GPS และระบบจัดกาการรสลับใช้งานแบตเตอรี่ในระหว่างเดินทาง",
+            title_en: "Electric Motorcycle Development",
+            desc_en: "Researched, designed, and developed firmware for key-less EV ignition systems, GPS tracking, and an automated battery-swapping management system during transit."
+        },
+        "รถรางนำเที่ยว และรถสามล้อไฟฟ้า เทศบาลเมืองน่าน": {
+            desc_th: "ออกแบบชุดจอแสดงผลชื่อสถาณี จัดทำ Firmware จอแสดงผลเรือนไมล์แบบ LCD ระบบ GPS ติดตามตำแหน่งรถ วางระบบควบคุมยานยนต์ไฟฟ้า และเว็บแอพพลิเคชัน สำหรับติดตามรถรับส่งนักท่องเที่ยวในเขตเมืองเก่า จังหวัดน่าน",
+            title_en: "Nan Municipality Electric Tram and E-Tricycle",
+            desc_en: "Designed the station display module, LCD instrument cluster firmware, GPS tracking system, EV control architecture, and web application for tracking tourist shuttles in Nan Old City."
+        },
+        "ระบบแสดงผลสภาพอากาศ และการพลังงาน": {
+            desc_th: "ออกแบบและติดตั้งระบบแสดงผลสภาพอากาศ และการพลังงาน สำหรับโรงพยาบาลส่งเสริมสุขภาพตำบลบ้านขะจาว",
+            title_en: "Weather and Energy Display System",
+            desc_en: "Designed and installed a weather condition and energy consumption display dashboard for Ban Kha Chao Health Promoting Hospital."
+        },
+        "รถรางไฟฟ้าแห่กระทง มช": {
+            desc_th: "พัฒนาระบบขับเคลื่อนไฟฟ้าและการควบคุมพลังงานของรถรางประดับขบวนแห่กระทง มหาวิทยาลัยเชียงใหม่",
+            title_en: "CMU Electric Parade Tram",
+            desc_en: "Developed the electric drivetrain and energy management system for the illuminated parade tram used in Chiang Mai University's Loy Krathong festival."
+        },
+        "ระบบพ่นละอองน้ำ ด่านเก็บค่าผ่านทาง": {
+            desc_th: "ออกแบบและติดตั้งระบบพ่นละอองน้ำ พร้อมจอแสดงผลค่าฝุ่น PM10 และ PM2.5 ติดตั้งที่ด่านเก็บค่าผ่านทางพิเศษ จำนวน 6 ด่าน พร้อมระบบแสดงผลผ่านจอ LCD ขนาดใหญ่ที่ศูนย์ควบคุมทางพิเศษ",
+            title_en: "Tollway PM2.5 Water Spray System",
+            desc_en: "Designed and installed automated water spray systems with PM10 & PM2.5 sensor displays across 6 toll plazas, including a centralized LCD monitoring dashboard at the control center."
+        },
+        "ระบบกล้อง AI อ่านป้ายทะเบียน": {
+            desc_th: "พัฒนาระบบตรวจสอบการเข้าออก โดยใช้หน่วยประมวลผลขนาดเล็กเชื่อมต่อกับโมดูลกล้อง และรันโมเดล AI แสดงผลผ่าน Dashboard ควบคุมผ่านระบบ Remote Desktop และเว็บแอพพลิเคชัน",
+            title_en: "AI License Plate Recognition Camera System",
+            desc_en: "Developed an access control system utilizing an edge processor and camera module. Runs an AI model to detect license plates, with dashboard visualization and control via Remote Desktop and Web Applications."
+        },
+        "ระบบกล้อง AI บันทึกข้อมูล ด่านเก็บค่าผ่านทางพรมแดน แม่สอด 2": {
+            desc_th: "พัฒนาระบบบันทึก และสรุปข้อมูลจำนวนการเข้าออก พร้อมควบคุมการทำงานของไม้กั้น โดยใช้หน่วยประมวลผลขนาดเล็กเชื่อมต่อกับโมดูลกล้อง และรันโมเดล AI อ่านป้ายทะเบียน และชนิดของรถบรรทุก แสดงผลผ่าน Dashboard ควบคุมผ่านระบบ Remote Desktop และเว็บแอพพลิเคชัน",
+            title_en: "Mae Sot 2 Border Tollway AI Data Logging Camera System",
+            desc_en: "Developed a traffic logging and boom barrier control system using an edge processor and camera. Features an AI model to read license plates and classify truck types, providing data insights via a Web Application Dashboard."
+        },
+        "ระบบโซล่าเซลร่วมกับแบตเตอรี่รถไฟฟ้า": {
+            desc_th: "ปรับปรุงแบบเตอรี่ และเพิ่มรูปแบบการเชื่อมต่อของชุดแบตเตอรี่รถไฟฟ้า เพื่อให้สามารถใช้งานร่วมกันกับ Inverter ได้",
+            title_en: "EV Battery integration with Solar Inverter System",
+            desc_en: "Modified EV battery architectures and connection topologies to make them compatible with standard solar inverter systems for stationary energy storage."
+        }
+    },
+
+    // ==========================================
+    // 💻 หมวดงานอิสระ (Freelance Developer)
+    // ==========================================
+    "freelance": {
+        "งานพิมพ์ 3D": {
+            desc_th: "รับออกแบบ 3D Model และพิมพ์ชิ้นงาน 3D สำหรับชิ้นส่วนกลไก โครงสร้างหุ่นยนต์ และกล่องใส่อุปกรณ์อิเล็กทรอนิกส์",
+            title_en: "3D Printing & Design Services",
+            desc_en: "Custom 3D modeling and printing services for mechanical parts, robot structures, and electronic enclosures."
+        },
+        "ชุดเลี้ยงหนอนแมลงวันลายเสือ เกษตร แม่เหียะ": {
+            desc_th: "ออกแบบและจัดทำ ชุดอุปกรณ์พร้อมเซ็นเซอร์และระบบควบคุมผ่าน Dashboard สำหรับการวิจัยการเพาะเลี้ยงหนอนแมลงวันลายเสือด้วยระบบ IoT; วิทยาลัยนานาชาตินวัตกรรมดิจิทัล",
+            title_en: "BSF Smart Farm Cultivation System",
+            desc_en: "Engineered sensor equipment and a Dashboard control system for IoT-based research on Black Soldier Fly (BSF) larvae cultivation. Client: International College of Digital Innovation."
+        },
+        "รถไฟฟ้าคนพิการ เวชศาสตร์ฟื้นฟู": {
+            desc_th: "ออกแบบและดัดแปลงรถเข็นไฟฟ้าสำหรับผู้พิการ ควบคุมด้วยระบบจอยสติ๊ก พร้อมระบบความปลอดภัยและการจัดการแบตเตอรี่ สำหรับศูนย์เวชศาสตร์ฟื้นฟู",
+            title_en: "Electric Wheelchair for Rehabilitation",
+            desc_en: "Designed and retrofitted a standard wheelchair into an electric-powered wheelchair controlled via joystick, featuring advanced safety systems and battery management. Client: Rehabilitation Center."
+        },
+        "จัดทำ Firmware จอแสดงผล": {
+            desc_th: "ออกแบบและจัดทำ Firmware เพื่อรับและแสดงผลข้อมูลจาก API ; บริษัท ไอเดีย เฮ้าส์ เซ็นเตอร์ จำกัด",
+            title_en: "Display Screen Firmware Development",
+            desc_en: "Designed and developed custom firmware to fetch and render data from external APIs. Client: Idea House Center Co., Ltd."
+        },
+        "ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู": {
+            desc_th: "ออกแบบและจัดทำ ชุดอุปกรณ์ฐานรับน้ำหนัก ระบบรับส่งข้อมูลผ่านคลื่นวิทยุ ชุดเซ็นเซอร์ Gyroscope และเกม 3D สำหรับทดสอบสมรรถภาพ และฝึกการทรงตัว ของผู้ป่วยกายภาพบำบัด; ศูนย์เวชศาสตร์ฟื้นฟู",
+            title_en: "Rehabilitation Balance Training Game System",
+            desc_en: "Designed a weight-bearing platform with RF wireless communication, Gyroscope sensors, and a 3D interactive game for testing and training physical therapy patients' balance. Client: Rehabilitation Center."
+        },
+        "ชุดเซ็นเซอร์ตรวจวัดคุณภาพน้ำ": {
+            desc_th: "ออกแบบและจัดทำ ชุดเซ็นเซอร์วัดทดสอบคุณภาพน้ำ ส่งข้อมูลขึ้น Cloud ติดตั้งที่เรือสำรวจอัตโนมัติกรมชลประทาน กรุงเทพมหานคร; บริษัท เพชรหิรัญ เอ็นจิเนียริ่ง เซอร์วิส จำกัด",
+            title_en: "Water Quality Sensor System",
+            desc_en: "Designed and built a water quality testing sensor module with Cloud data transmission, installed on the Royal Irrigation Department's autonomous survey boats in Bangkok. Client: Petchhirun Engineering Service Co., Ltd."
+        },
+        "ระบบ Smart Farm เพาะเลี้ยงหนอนแมลงวันลายเสือ": {
+            desc_th: "ออกแบบและจัดทำ ชุดอุปกรณ์พร้อมเซ็นเซอร์และระบบควบคุมผ่าน Dashboard สำหรับการวิจัยการเพาะเลี้ยงหนอนแมลงวันลายเสือด้วยระบบ IoT; วิทยาลัยนานาชาตินวัตกรรมดิจิทัล",
+            title_en: "BSF Smart Farm Cultivation System",
+            desc_en: "Engineered sensor equipment and a Dashboard control system for IoT-based research on Black Soldier Fly (BSF) larvae cultivation. Client: International College of Digital Innovation."
+        },
+        "ระบบ Smart Power Station": {
+            desc_th: "ออกแบบและจัดทำ ตู้ควบคุมระบบพลังงานไฟฟ้าสำหรับลานจอดรถขนตู้คอนเทรนเนอร์แช่เย็น รับส่งข้อมูลคำสั่งตัดไฟ และปริมาณการใช้พลังงานแบบออนไลน์ผ่านเว็บแอพพลิเคชัน; บริษัท ตองแปด โลจิสติกส์ จำกัด",
+            title_en: "Smart Power Station Control System",
+            desc_en: "Designed and built an electrical power control cabinet for refrigerated container parking lots. Features remote power cutoff and online energy consumption monitoring via a Web Application. Client: Tongpad Logistics Co., Ltd."
+        }
+    }
 };
 
 const projectsData = [];
@@ -229,32 +344,39 @@ function generateProjectUI() {
             const safeKey = `${category}-${folderName.replace(/\\s+/g, '-').replace(/[^a-zA-Z0-9-ก-๙]/g, '')}`;
             const imagesArray = projects[folderName];
             const imagesCount = imagesArray.length;
-            
-            // ดึงคำอธิบายจากตัวแปร PROJECT_DETAILS ถ้าไม่มีให้ใส่ข้อความว่างๆ
-            const description = PROJECT_DETAILS[folderName] || "";
+
+            const projData = (PROJECT_DETAILS[category] && PROJECT_DETAILS[category][folderName]) || {};
+            const desc_th = typeof projData === 'string' ? projData : (projData.desc_th || "");
+            const title_th = typeof projData === 'string' ? folderName : (projData.title_th || folderName);
+            const title_en = typeof projData === 'string' ? folderName : (projData.title_en || folderName);
+            const desc_en = typeof projData === 'string' ? desc_th : (projData.desc_en || desc_th);
 
             // Push to projectsData for Lightbox compatibility
             projectsData.push({
                 key: safeKey,
                 folderName: folderName,
-                title_th: folderName, // Use folder name as title
-                title_en: folderName, // Use folder name as title
-                desc_th: description, // Pass description to lightbox mapping
-                desc_en: description, // Pass description to lightbox mapping
+                title_th: title_th,
+                title_en: title_en,
+                desc_th: desc_th,
+                desc_en: desc_en,
                 images: imagesArray,
                 imagesCount: imagesCount
             });
 
+            // Preload next image if exists
+            const preloadLink = imagesArray.length > 1 ? `<link rel="preload" as="image" href="${imagesArray[1]}">` : "";
+
             // Build HTML row card
             htmlContent += `
+                ${preloadLink}
                 <div class="project-btn-card row-card" onclick="openGallery('${safeKey}')" id="proj-${safeKey}-card">
                     <div class="project-card-thumb" id="thumb-container-${safeKey}">
-                        <img src="${imagesArray[0]}" alt="Preview" id="thumb-${safeKey}" class="animated-thumb">
+                        <img src="${imagesArray[0]}" alt="Preview" id="thumb-${safeKey}" class="animated-thumb" loading="lazy">
                     </div>
                     <div class="project-card-content">
-                        <h5 class="project-title freelance-desc" id="proj-${safeKey}-title" style="margin-bottom:0.5rem; font-size: 1.05rem;">${folderName}</h5>
+                        <h5 class="project-title freelance-desc" id="proj-${safeKey}-title" style="margin-bottom:0.5rem; font-size: 1.05rem;">${title_th}</h5>
                         <!-- Empty area for description -->
-                        <p class="project-short-desc" id="desc-${safeKey}" style="margin-bottom: 1rem; color: var(--tertiary); font-size: 0.95rem;">${description}</p>
+                        <p class="project-short-desc" id="desc-${safeKey}" style="margin-bottom: 1rem; color: var(--tertiary); font-size: 0.95rem;">${desc_th}</p>
                         <span class="view-gallery-action code-font" id="gallery-${safeKey}" style="display:inline-flex; margin-top: auto;"><i class="fa-solid fa-circle-play"></i> GALLERY (${imagesCount})</span>
                     </div>
                 </div>
@@ -445,6 +567,7 @@ function applyLanguage(lang) {
         donausDutiesContainer.appendChild(li);
     });
     document.getElementById("donaus-title").textContent = dict["donaus-title"];
+    document.getElementById("donaus-title-th").textContent = dict["donaus-title-th"];
 
     // Job: Innoedge Duties lists
     document.getElementById("innoedge-r1-title").textContent = dict["innoedge-r1-title"];
@@ -1058,7 +1181,7 @@ async function handleContactSubmit(event) {
 function setupProjectThumbnails() {
     projectsData.forEach(project => {
         const thumbImg = document.getElementById(`thumb-${project.key}`);
-        
+
         // Set initial valid image source
         if (thumbImg && project.images && project.images.length > 0) {
             thumbImg.src = project.images[0];
@@ -1067,25 +1190,32 @@ function setupProjectThumbnails() {
         if (!thumbImg || project.imagesCount <= 1) return;
 
         let currentImageIdx = 0;
-        
+
         // Change image every 2.5 - 3.5 seconds (randomized offset so they don't all change at once)
         const intervalTime = 2500 + Math.random() * 1000;
 
         setInterval(() => {
             currentImageIdx = (currentImageIdx + 1) % project.imagesCount;
-            
+
             // Fade out
             thumbImg.style.opacity = '0';
-            
+
             setTimeout(() => {
                 // Use dynamic mapping from project.images array instead of hardcoded paths
                 thumbImg.src = project.images[currentImageIdx];
                 // Fade in once loaded
                 thumbImg.onload = () => {
                     thumbImg.style.opacity = '1';
+
+                    // Preload the next image silently in the background
+                    const nextIdx = (currentImageIdx + 1) % project.imagesCount;
+                    if (project.images[nextIdx]) {
+                        const preloadImg = new Image();
+                        preloadImg.src = project.images[nextIdx];
+                    }
                 };
             }, 400); // Wait for CSS transition to fade out
-            
+
         }, intervalTime);
     });
 }

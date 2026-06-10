@@ -27,7 +27,7 @@
     <header class="navbar" id="main-navbar">
         <div class="nav-container">
             <div class="nav-logo" id="nav-logo-text">
-                <span class="tech-prefix">WY.</span><span class="tech-body">DEV</span>
+                <span class="tech-prefix">WEE.</span><span class="tech-body">DEV</span>
             </div>
 
             <nav class="nav-links" id="nav-menu">
@@ -131,7 +131,7 @@
             </div>
         </section>
 
-        
+
 
         <!-- WORK EXPERIENCE SECTION -->
         <section id="experience" class="section experience-section">
@@ -139,17 +139,57 @@
                     class="fa-solid fa-briefcase heading-icon"></i>ประวัติการทำงานและผลงาน</h2>
 
             <div class="timeline">
+                <!-- PORTFOLIO TIMELINE ITEM -->
+                <div class="timeline-item" id="portfolio">
+                    <div class="timeline-badge code-font year-text" data-key="nav-portfolio">Portfolio</div>
+                    <div class="card timeline-card glow-on-hover">
+                        <div class="card-header">
+                            <div class="company-info">
+                                <h3 class="experience-title" data-key="section-portfolio">บันทึกงานที่เคยทำ</h3>
+                                <h4 class="experience-company code-font text-primary" data-key="gallery-company">Project Galleries</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="projects-grid row-layout-grid" id="projects-container-donaus">
+                                <!-- Injected dynamically by script.js -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FREELANCE PROJECTS GRID -->
+                <div class="timeline-item">
+                    <div class="timeline-badge code-font year-text">Freelance</div>
+                    <div class="card timeline-card glow-on-hover">
+                        <div class="card-header">
+                            <div class="company-info">
+                                <h3 class="experience-title" id="freelance-main-title">Freelance Developer</h3>
+                                <h4 class="experience-company code-font text-primary" data-key="freelance-company">Independent Engineering & Software Contracts</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="projects-grid row-layout-grid" id="projects-container-freelance">
+                                <!-- Injected dynamically by script.js -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- COMPANY 2: DONAUS (2022 - 2025) -->
                 <div class="timeline-item">
                     <div class="timeline-badge code-font year-text">2022 - 2025</div>
                     <div class="card timeline-card glow-on-hover">
                         <div class="card-header has-logo">
                             <div class="company-info">
-                                <h3 class="experience-title" id="donaus-title">Product R&D Engineer</h3>
-                                <h4 class="experience-company code-font text-primary">Donaus CO., LTD. (บริษัท ดลอส
-                                    จำกัด)</h4>
+                                <h3 class="experience-title"
+                                    style="display: flex; align-items: baseline; flex-wrap: wrap;">
+                                    <span id="donaus-title">Product R&D Engineer</span>
+                                    <span id="donaus-title-th" class="job-thai-desc"
+                                        style="margin-left: 0.75rem; color: var(--text-secondary); font-family: 'Sarabun', sans-serif; font-size: 0.85em; font-weight: normal;">(วิศวกรวิจัยและพัฒนาผลิตภัณฑ์)</span>
+                                </h3>
+                                <h4 class="experience-company code-font text-primary" data-key="donaus-company">บริษัท ดลอัส จำกัด</h4>
                             </div>
-                            <a href="https://www.donaus.com/index.html" target="_blank" rel="noopener noreferrer" class="company-logo link-logo" aria-label="Visit Donaus Website">
+                            <a href="https://www.donaus.com/index.html" target="_blank" rel="noopener noreferrer"
+                                class="company-logo link-logo" aria-label="Visit Donaus Website">
                                 <img src="images/logo/donaus.webp" alt="Donaus Logo">
                             </a>
                         </div>
@@ -171,10 +211,11 @@
                             <div class="company-info">
                                 <h3 class="experience-title" id="innoedge-main-title">Project Manager & Technical
                                     Engineer</h3>
-                                <h4 class="experience-company code-font text-primary">Innoedge Gogo Co., Ltd. (บริษัท
-                                    อินโนเอดจ์ โกโก จำกัด)</h4>
+                                <h4 class="experience-company code-font text-primary" data-key="innoedge-company">บริษัท อินโนเอดจ์ โกโก จำกัด</h4>
                             </div>
-                            <a href="https://www.facebook.com/ino8go/?locale=th_TH" target="_blank" rel="noopener noreferrer" class="company-logo link-logo" aria-label="Visit Innoedge Facebook Page">
+                            <a href="https://www.facebook.com/ino8go/?locale=th_TH" target="_blank"
+                                rel="noopener noreferrer" class="company-logo link-logo"
+                                aria-label="Visit Innoedge Facebook Page">
                                 <img src="images/logo/inno8gogo.jpg" alt="Innoedge Logo">
                             </a>
                         </div>
@@ -204,49 +245,14 @@
                                     <!-- Injected by script -->
                                 </ul>
                             </div>
-                            <div class="projects-grid row-layout-grid" id="projects-container-inno8gogo" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px dashed var(--neutral);">
+                            <div class="projects-grid row-layout-grid" id="projects-container-inno8gogo"
+                                style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px dashed var(--neutral);">
                                 <!-- Injected dynamically by script.js -->
                             </div>
                         </div>
                     </div>
                 </div>
 
-                                <!-- PORTFOLIO TIMELINE ITEM -->
-                <div class="timeline-item" id="portfolio">
-                    <div class="timeline-badge code-font year-text" data-key="nav-portfolio">Portfolio</div>
-                    <div class="card timeline-card glow-on-hover">
-                        <div class="card-header">
-                            <div class="company-info">
-                                <h3 class="experience-title" data-key="section-portfolio">บันทึกงานที่เคยทำ</h3>
-                                <h4 class="experience-company code-font text-primary">Project Galleries</h4>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="projects-grid row-layout-grid" id="projects-container-donaus">
-                                <!-- Injected dynamically by script.js -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-<!-- FREELANCE PROJECTS GRID -->
-                <div class="timeline-item">
-                    <div class="timeline-badge code-font year-text">Freelance</div>
-                    <div class="card timeline-card glow-on-hover">
-                        <div class="card-header">
-                            <div class="company-info">
-                                <h3 class="experience-title" id="freelance-main-title">Freelance Developer</h3>
-                                <h4 class="experience-company code-font text-primary">Independent Engineering & Software
-                                    Contracts</h4>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="projects-grid row-layout-grid" id="projects-container-freelance">
-                                <!-- Injected dynamically by script.js -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -348,10 +354,10 @@
                                 <div class="skill-progress" style="width: 0%" data-width="90%"></div>
                             </div>
 
-                            <div class="skill-meter-label code-font">3D CAD Modeling <span class="percent">85%</span>
+                            <div class="skill-meter-label code-font">3D CAD Modeling <span class="percent">75%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 0%" data-width="85%"></div>
+                                <div class="skill-progress" style="width: 0%" data-width="75%"></div>
                             </div>
 
                             <div class="skill-meter-label code-font">PCB Schematic Design <span
@@ -384,22 +390,22 @@
                                 <div class="skill-progress" style="width: 0%" data-width="95%"></div>
                             </div>
 
-                            <div class="skill-meter-label code-font">STM32 (HAL / LL) <span class="percent">80%</span>
+                            <div class="skill-meter-label code-font">STM32 (HAL / LL) <span class="percent">75%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 0%" data-width="80%"></div>
+                                <div class="skill-progress" style="width: 0%" data-width="75%"></div>
                             </div>
 
                             <div class="skill-meter-label code-font">Raspberry Pi (Python/C) <span
-                                    class="percent">90%</span></div>
+                                    class="percent">87%</span></div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 0%" data-width="90%"></div>
+                                <div class="skill-progress" style="width: 0%" data-width="87%"></div>
                             </div>
 
                             <div class="skill-meter-label code-font">MCU Communication Networks <span
-                                    class="percent">88%</span></div>
+                                    class="percent">90%</span></div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 0%" data-width="88%"></div>
+                                <div class="skill-progress" style="width: 0%" data-width="90%"></div>
                             </div>
                         </div>
                     </div>
@@ -416,9 +422,9 @@
                         <p class="skill-group-desc" id="skill-g3-desc"></p>
                         <div class="skill-meter-container">
                             <div class="skill-meter-label code-font">Fullstack Web (HTML/JS/Node) <span
-                                    class="percent">85%</span></div>
+                                    class="percent">60%</span></div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 0%" data-width="85%"></div>
+                                <div class="skill-progress" style="width: 0%" data-width="60%"></div>
                             </div>
 
                             <div class="skill-meter-label code-font">API Integration & IoT MQTT <span
@@ -427,16 +433,16 @@
                                 <div class="skill-progress" style="width: 0%" data-width="90%"></div>
                             </div>
 
-                            <div class="skill-meter-label code-font">SQL Databases <span class="percent">80%</span>
+                            <div class="skill-meter-label code-font">SQL Databases <span class="percent">65%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 0%" data-width="80%"></div>
+                                <div class="skill-progress" style="width: 0%" data-width="65%"></div>
                             </div>
 
                             <div class="skill-meter-label code-font">Cloud Dashboards & Remote Control <span
-                                    class="percent">85%</span></div>
+                                    class="percent">75%</span></div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 0%" data-width="85%"></div>
+                                <div class="skill-progress" style="width: 0%" data-width="75%"></div>
                             </div>
                         </div>
                     </div>
@@ -446,19 +452,22 @@
                 <div class="card skill-card glow-on-hover">
                     <div class="card-header border-orange">
                         <i class="fa-solid fa-wrench skill-icon text-primary"></i>
-                        <span class="skill-group-title code-font" data-key="skill-g4-title">MECHANICAL & ELECTRICAL</span>
+                        <span class="skill-group-title code-font" data-key="skill-g4-title">MECHANICAL &
+                            ELECTRICAL</span>
                     </div>
                     <div class="card-body">
                         <p class="skill-group-desc" id="skill-g4-desc"></p>
                         <div class="skill-meter-container">
-                            <div class="skill-meter-label code-font" id="skill-g4-s1">Workshop Tools (Drilling, Cutting, Welding) <span class="percent">85%</span></div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 0%" data-width="85%"></div>
-                            </div>
-
-                            <div class="skill-meter-label code-font" id="skill-g4-s2">Building Electrical Wiring <span class="percent">80%</span></div>
+                            <div class="skill-meter-label code-font" id="skill-g4-s1">Workshop Tools (Drilling, Cutting,
+                                Welding) <span class="percent">80%</span></div>
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 0%" data-width="80%"></div>
+                            </div>
+
+                            <div class="skill-meter-label code-font" id="skill-g4-s2">Building Electrical Wiring <span
+                                    class="percent">90%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%" data-width="90%"></div>
                             </div>
                         </div>
                     </div>
