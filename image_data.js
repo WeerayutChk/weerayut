@@ -52,7 +52,8 @@ window.IMAGE_TREE = {
       "optimized_images/donaus/ชุดเก็บข้อมูลการใช้พลังงานในอาคาร/IMG_20240223_140827.webp",
       "optimized_images/donaus/ชุดเก็บข้อมูลการใช้พลังงานในอาคาร/IMG_20240223_140833.webp",
       "optimized_images/donaus/ชุดเก็บข้อมูลการใช้พลังงานในอาคาร/IMG_20240223_141407.webp",
-      "optimized_images/donaus/ชุดเก็บข้อมูลการใช้พลังงานในอาคาร/IMG_20240223_141414.webp"
+      "optimized_images/donaus/ชุดเก็บข้อมูลการใช้พลังงานในอาคาร/IMG_20240223_141414.webp",
+      "optimized_images/donaus/ชุดเก็บข้อมูลการใช้พลังงานในอาคาร/สกรีนช็อต 2026-06-10 162311.webp"
     ],
     "ปรับปรุงระบบไฟโซล่าเซลสวนหลวง ร.9": [
       "optimized_images/donaus/ปรับปรุงระบบไฟโซล่าเซลสวนหลวง ร.9/1700290964447.webp",
@@ -96,7 +97,9 @@ window.IMAGE_TREE = {
       "optimized_images/donaus/รถจักรยานยนต์ไฟฟ้า/IMG_20240229_090354.webp",
       "optimized_images/donaus/รถจักรยานยนต์ไฟฟ้า/IMG_20240725_130139.webp",
       "optimized_images/donaus/รถจักรยานยนต์ไฟฟ้า/IMG_20240725_130147.webp",
-      "optimized_images/donaus/รถจักรยานยนต์ไฟฟ้า/IMG_20240725_130210.webp"
+      "optimized_images/donaus/รถจักรยานยนต์ไฟฟ้า/IMG_20240725_130210.webp",
+      "optimized_images/donaus/รถจักรยานยนต์ไฟฟ้า/สกรีนช็อต 2026-06-10 163039.webp",
+      "optimized_images/donaus/รถจักรยานยนต์ไฟฟ้า/สกรีนช็อต 2026-06-10 163410.webp"
     ],
     "รถรางนำเที่ยว และรถสามล้อไฟฟ้า เทศบาลเมืองน่าน": [
       "optimized_images/donaus/รถรางนำเที่ยว และรถสามล้อไฟฟ้า เทศบาลเมืองน่าน/1701269876748.webp",
@@ -314,6 +317,7 @@ window.IMAGE_TREE = {
       "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/1779867772269.webp",
       "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/1779867803817.webp",
       "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/1779867863057.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/ChatGPT Image 21 ก.พ. 2569 17_25_51.webp",
       "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/IMG_20251223_132905.webp",
       "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/IMG_20251223_132920.webp",
       "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/IMG_20251223_132949.webp",
@@ -346,7 +350,36 @@ window.IMAGE_TREE = {
       "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/IMG_20260327_134532.webp",
       "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/IMG_20260327_134604.webp",
       "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/IMG_20260602_145933.webp",
-      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/IMG_20260602_145944.webp"
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/IMG_20260602_145944.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/LINE_ALBUM_กระดาน_251223_1.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/LINE_ALBUM_กระดาน_251223_2.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/LINE_ALBUM_กระดาน_251223_3.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/LINE_ALBUM_กระดาน_251223_5.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/LINE_ALBUM_กระดาน_251223_8.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/LINE_ALBUM_กระดาน_251223_9.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/LINE_ALBUM_กระดาน_251223_12.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/LINE_ALBUM_กระดาน_251223_14.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 150354.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 151608.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 151632.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 153646.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 153652.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 153659.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 153754.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 153813.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 154407.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 154536.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 154601.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 154632.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 154707.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 154941.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 155112.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 160001.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 160136.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 160210.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 160235.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 160303.webp",
+      "optimized_images/freelance/ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู/สกรีนช็อต 2026-06-10 160411.webp"
     ],
     "ชุดเซ็นเซอร์ตรวจวัดคุณภาพน้ำ": [
       "optimized_images/freelance/ชุดเซ็นเซอร์ตรวจวัดคุณภาพน้ำ/1716450114044.webp",
