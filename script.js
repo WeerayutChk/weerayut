@@ -254,14 +254,14 @@ const PROJECT_DETAILS = {
             title_en: "CMU Electric Parade Tram",
             desc_en: "Developed the electric drivetrain and energy management system for the illuminated parade tram used in Chiang Mai University's Loy Krathong festival."
         },
-        "ระบบพ่นละอองน้ำ ด่านเก็บค่าผ่านทาง": {
+        "ระบบพ่นละอองน้ำ ด่านเก็บค่าผ่านทางพิเศษ": {
             desc_th: "ออกแบบและติดตั้งระบบพ่นละอองน้ำ พร้อมจอแสดงผลค่าฝุ่น PM10 และ PM2.5 ติดตั้งที่ด่านเก็บค่าผ่านทางพิเศษ จำนวน 6 ด่าน พร้อมระบบแสดงผลผ่านจอ LCD ขนาดใหญ่ที่ศูนย์ควบคุมทางพิเศษ",
             title_en: "Tollway PM2.5 Water Spray System",
             desc_en: "Designed and installed automated water spray systems with PM10 & PM2.5 sensor displays across 6 toll plazas, including a centralized LCD monitoring dashboard at the control center."
         },
-        "ระบบกล้อง AI อ่านป้ายทะเบียน": {
+        "ระบบกล้อง AI อ่านป้ายทะเบียน และอื่นๆ": {
             desc_th: "พัฒนาระบบตรวจสอบการเข้าออก โดยใช้หน่วยประมวลผลขนาดเล็กเชื่อมต่อกับโมดูลกล้อง และรันโมเดล AI แสดงผลผ่าน Dashboard ควบคุมผ่านระบบ Remote Desktop และเว็บแอพพลิเคชัน",
-            title_en: "AI License Plate Recognition Camera System",
+            title_en: "AI License Plate & Other Object Recognition Camera System",
             desc_en: "Developed an access control system utilizing an edge processor and camera module. Runs an AI model to detect license plates, with dashboard visualization and control via Remote Desktop and Web Applications."
         },
         "ระบบกล้อง AI บันทึกข้อมูล ด่านเก็บค่าผ่านทางพรมแดน แม่สอด 2": {
@@ -285,7 +285,7 @@ const PROJECT_DETAILS = {
             title_en: "3D Printing & Design Services",
             desc_en: "Custom 3D modeling and printing services for mechanical parts, robot structures, and electronic enclosures."
         },
-        "ชุดเลี้ยงหนอนแมลงวันลายเสือ เกษตร แม่เหียะ": {
+        "ชุดเลี้ยงหนอนแมลงวันลายเสือ": {
             desc_th: "ออกแบบและจัดทำ ชุดอุปกรณ์พร้อมเซ็นเซอร์และระบบควบคุมผ่าน Dashboard สำหรับการวิจัยการเพาะเลี้ยงหนอนแมลงวันลายเสือด้วยระบบ IoT; วิทยาลัยนานาชาตินวัตกรรมดิจิทัล",
             title_en: "BSF Smart Farm Cultivation System",
             desc_en: "Engineered sensor equipment and a Dashboard control system for IoT-based research on Black Soldier Fly (BSF) larvae cultivation. Client: International College of Digital Innovation."
