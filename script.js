@@ -111,7 +111,7 @@ const translations = {
         "lang-card-title": "LANGUAGES.md",
         "projects-gallery-title": "CLICK_TO_VIEW_PHOTOS.json",
 
-        "section-experience": "Work Experience & Projects",
+        "section-experience": "Work Experience",
         "section-portfolio": "Project Portfolio",
         "section-skills": "Core Skills & Competencies",
         "section-terminal": "Interactive CLI Terminal",
