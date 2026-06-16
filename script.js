@@ -205,10 +205,7 @@ const translations = {
 
 // เขียนคำอธิบายผลงาน (Description) ที่นี่ โดยใช้ "ชื่อโฟลเดอร์" เป็น Key
 const PROJECT_DETAILS = {
-    // ==========================================
-    // 🏢 หมวดผลงานบริษัท (Donaus R&D)
-    // ==========================================
-    "donaus": {
+    "training_and_exhibitions": {
         "จัดอบรมรถไฟฟ้า ลำปาง": {
             desc_th: "วิทยากรให้ความรู้ในเรื่องของรถไฟฟ้า ชุดควบคุมการทำงาน วิธีการตรวจสอบอุปกรณ์ และการแก้ปัญหากับเหตุขัดข้อง ที่ศูนย์นวัตกรรมลำปาง",
             title_en: "EV Training Seminar in Lampang",
@@ -223,7 +220,13 @@ const PROJECT_DETAILS = {
             desc_th: "นำเสนอผลงาน นวัตกรรม และผลิตภัณฑ์ที่เกี่ยวข้องกับเทคโนโลยีรถไฟฟ้า ให้กับบุคลากรหน่วยงานภาครัฐ และภาคเอกชน",
             title_en: "Lampang Innovation Center Exhibition",
             desc_en: "Presented EV technology innovations and products to government and private sector representatives."
-        },
+        }
+    },
+
+    // ==========================================
+    // ⚙️ หมวดผลงานด้านระบบควบคุม (Control Systems)
+    // ==========================================
+    "control_systems": {
         "ชุดเก็บข้อมูลการใช้พลังงานในอาคาร": {
             desc_th: "ชุดเก็บบันทึกการใช้พลังงานภายในอาคาร เพื่อนำไปวิเคราะห์ขนาดของแบตเตอรี่ กำลังไฟฟ้าขั้นต่ำที่จะติดตั้ง และวางแผนการติดตั้งโซล่าเซลล์ให้เหมาะสมกับการใช้งาน",
             title_en: "Building Energy Monitoring System",
@@ -244,11 +247,6 @@ const PROJECT_DETAILS = {
             title_en: "Nan Municipality Electric Tram and E-Tricycle",
             desc_en: "Designed the station display module, LCD instrument cluster firmware, GPS tracking system, EV control architecture, and web application for tracking tourist shuttles in Nan Old City."
         },
-        "ระบบแสดงผลสภาพอากาศ และการพลังงาน": {
-            desc_th: "ออกแบบและติดตั้งระบบแสดงผลสภาพอากาศ และการพลังงาน สำหรับโรงพยาบาลส่งเสริมสุขภาพตำบลบ้านขะจาว",
-            title_en: "Weather and Energy Display System",
-            desc_en: "Designed and installed a weather condition and energy consumption display dashboard for Ban Kha Chao Health Promoting Hospital."
-        },
         "รถรางไฟฟ้าแห่กระทง มช": {
             desc_th: "พัฒนาระบบขับเคลื่อนไฟฟ้าและการควบคุมพลังงานของรถรางประดับขบวนแห่กระทง มหาวิทยาลัยเชียงใหม่",
             title_en: "CMU Electric Parade Tram",
@@ -259,27 +257,11 @@ const PROJECT_DETAILS = {
             title_en: "Tollway PM2.5 Water Spray System",
             desc_en: "Designed and installed automated water spray systems with PM10 & PM2.5 sensor displays across 6 toll plazas, including a centralized LCD monitoring dashboard at the control center."
         },
-        "ระบบกล้อง AI อ่านป้ายทะเบียน และอื่นๆ": {
-            desc_th: "พัฒนาระบบตรวจสอบการเข้าออก โดยใช้หน่วยประมวลผลขนาดเล็กเชื่อมต่อกับโมดูลกล้อง และรันโมเดล AI แสดงผลผ่าน Dashboard ควบคุมผ่านระบบ Remote Desktop และเว็บแอพพลิเคชัน",
-            title_en: "AI License Plate & Other Object Recognition Camera System",
-            desc_en: "Developed an access control system utilizing an edge processor and camera module. Runs an AI model to detect license plates, with dashboard visualization and control via Remote Desktop and Web Applications."
-        },
-        "ระบบกล้อง AI บันทึกข้อมูล ด่านเก็บค่าผ่านทางพรมแดน แม่สอด 2": {
-            desc_th: "พัฒนาระบบบันทึก และสรุปข้อมูลจำนวนการเข้าออก พร้อมควบคุมการทำงานของไม้กั้น โดยใช้หน่วยประมวลผลขนาดเล็กเชื่อมต่อกับโมดูลกล้อง และรันโมเดล AI อ่านป้ายทะเบียน และชนิดของรถบรรทุก แสดงผลผ่าน Dashboard ควบคุมผ่านระบบ Remote Desktop และเว็บแอพพลิเคชัน",
-            title_en: "Mae Sot 2 Border Tollway AI Data Logging Camera System",
-            desc_en: "Developed a traffic logging and boom barrier control system using an edge processor and camera. Features an AI model to read license plates and classify truck types, providing data insights via a Web Application Dashboard."
-        },
         "ระบบโซล่าเซลร่วมกับแบตเตอรี่รถไฟฟ้า": {
             desc_th: "ปรับปรุงแบบเตอรี่ และเพิ่มรูปแบบการเชื่อมต่อของชุดแบตเตอรี่รถไฟฟ้า เพื่อให้สามารถใช้งานร่วมกันกับ Inverter ได้",
             title_en: "EV Battery integration with Solar Inverter System",
             desc_en: "Modified EV battery architectures and connection topologies to make them compatible with standard solar inverter systems for stationary energy storage."
-        }
-    },
-
-    // ==========================================
-    // 💻 หมวดงานอิสระ (Freelance Developer)
-    // ==========================================
-    "freelance": {
+        },
         "งานพิมพ์ 3D": {
             desc_th: "รับออกแบบ 3D Model และพิมพ์ชิ้นงาน 3D สำหรับชิ้นส่วนกลไก โครงสร้างหุ่นยนต์ และกล่องใส่อุปกรณ์อิเล็กทรอนิกส์",
             title_en: "3D Printing & Design Services",
@@ -294,11 +276,6 @@ const PROJECT_DETAILS = {
             desc_th: "ออกแบบและดัดแปลงรถเข็นไฟฟ้าสำหรับผู้พิการ ควบคุมด้วยระบบจอยสติ๊ก พร้อมระบบความปลอดภัยและการจัดการแบตเตอรี่ สำหรับศูนย์เวชศาสตร์ฟื้นฟู",
             title_en: "Electric Wheelchair for Rehabilitation",
             desc_en: "Designed and retrofitted a standard wheelchair into an electric-powered wheelchair controlled via joystick, featuring advanced safety systems and battery management. Client: Rehabilitation Center."
-        },
-        "จัดทำ Firmware จอแสดงผล": {
-            desc_th: "ออกแบบและจัดทำ Firmware เพื่อรับและแสดงผลข้อมูลจาก API ; บริษัท ไอเดีย เฮ้าส์ เซ็นเตอร์ จำกัด",
-            title_en: "Display Screen Firmware Development",
-            desc_en: "Designed and developed custom firmware to fetch and render data from external APIs. Client: Idea House Center Co., Ltd."
         },
         "ชุดเกมฝึกการทรงตัว เวชศาสตร์ฟื้นฟู": {
             desc_th: "ออกแบบและจัดทำ ชุดอุปกรณ์ฐานรับน้ำหนัก ระบบรับส่งข้อมูลผ่านคลื่นวิทยุ ชุดเซ็นเซอร์ Gyroscope และเกม 3D สำหรับทดสอบสมรรถภาพ และฝึกการทรงตัว ของผู้ป่วยกายภาพบำบัด; ศูนย์เวชศาสตร์ฟื้นฟู",
@@ -319,6 +296,32 @@ const PROJECT_DETAILS = {
             desc_th: "ออกแบบและจัดทำ ตู้ควบคุมระบบพลังงานไฟฟ้าสำหรับลานจอดรถขนตู้คอนเทรนเนอร์แช่เย็น รับส่งข้อมูลคำสั่งตัดไฟ และปริมาณการใช้พลังงานแบบออนไลน์ผ่านเว็บแอพพลิเคชัน; บริษัท ตองแปด โลจิสติกส์ จำกัด",
             title_en: "Smart Power Station Control System",
             desc_en: "Designed and built an electrical power control cabinet for refrigerated container parking lots. Features remote power cutoff and online energy consumption monitoring via a Web Application. Client: Tongpad Logistics Co., Ltd."
+        }
+    },
+
+    // ==========================================
+    // 💻 หมวดผลงานด้านระบบประมวลผล (Processing Systems)
+    // ==========================================
+    "processing_systems": {
+        "ระบบกล้อง AI อ่านป้ายทะเบียน และอื่นๆ": {
+            desc_th: "พัฒนาระบบตรวจสอบการเข้าออก โดยใช้หน่วยประมวลผลขนาดเล็กเชื่อมต่อกับโมดูลกล้อง และรันโมเดล AI แสดงผลผ่าน Dashboard ควบคุมผ่านระบบ Remote Desktop และเว็บแอพพลิเคชัน",
+            title_en: "AI License Plate & Other Object Recognition Camera System",
+            desc_en: "Developed an access control system utilizing an edge processor and camera module. Runs an AI model to detect license plates, with dashboard visualization and control via Remote Desktop and Web Applications."
+        },
+        "ระบบกล้อง AI บันทึกข้อมูล ด่านเก็บค่าผ่านทางพรมแดน แม่สอด 2": {
+            desc_th: "พัฒนาระบบบันทึก และสรุปข้อมูลจำนวนการเข้าออก พร้อมควบคุมการทำงานของไม้กั้น โดยใช้หน่วยประมวลผลขนาดเล็กเชื่อมต่อกับโมดูลกล้อง และรันโมเดล AI อ่านป้ายทะเบียน และชนิดของรถบรรทุก แสดงผลผ่าน Dashboard ควบคุมผ่านระบบ Remote Desktop และเว็บแอพพลิเคชัน",
+            title_en: "Mae Sot 2 Border Tollway AI Data Logging Camera System",
+            desc_en: "Developed a traffic logging and boom barrier control system using an edge processor and camera. Features an AI model to read license plates and classify truck types, providing data insights via a Web Application Dashboard."
+        },
+        "ระบบแสดงผลสภาพอากาศ และการพลังงาน": {
+            desc_th: "ออกแบบและติดตั้งระบบแสดงผลสภาพอากาศ และการพลังงาน สำหรับโรงพยาบาลส่งเสริมสุขภาพตำบลบ้านขะจาว",
+            title_en: "Weather and Energy Display System",
+            desc_en: "Designed and installed a weather condition and energy consumption display dashboard for Ban Kha Chao Health Promoting Hospital."
+        },
+        "จัดทำ Firmware จอแสดงผล": {
+            desc_th: "ออกแบบและจัดทำ Firmware เพื่อรับและแสดงผลข้อมูลจาก API ; บริษัท ไอเดีย เฮ้าส์ เซ็นเตอร์ จำกัด",
+            title_en: "Display Screen Firmware Development",
+            desc_en: "Designed and developed custom firmware to fetch and render data from external APIs. Client: Idea House Center Co., Ltd."
         }
     }
 };
@@ -725,13 +728,13 @@ function setupSkillBarsAnimation() {
 // ==========================================
 const typingSkills = {
     th: [
-        "วิศวกรระบบสมองกลฝังตัว & IoT",
-        "วิศวกรผู้ออกแบบและพัฒนาระบบควบคุมอัตโนมัติ",
+        "วิศวกรระบบสมองกลฝังตัว",
+        "วิศวกรออกแบบและพัฒนาระบบการทำงานอัตโนมัติ",
         "นักพัฒนาซอฟต์แวร์ Fullstack"
     ],
     en: [
-        "Embedded Systems & IoT Engineer",
-        "Designer & Developer of Automation Control Systems",
+        "Embedded Systems Engineer",
+        "Designer & Developer of Automation Systems",
         "Fullstack Software Developer"
     ]
 };
