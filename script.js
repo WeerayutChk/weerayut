@@ -461,6 +461,19 @@ function playSound(type = 'keypress') {
     }
 }
 
+// ==========================================
+// GOOGLE ANALYTICS EVENT TRACKING
+// ==========================================
+function trackGAEvent(eventName, category, label) {
+    if (typeof gtag === 'function') {
+        gtag('event', eventName, {
+            'event_category': category,
+            'event_label': label
+        });
+        console.log(`[GA Event Sent] ${eventName} | Category: ${category} | Label: ${label}`);
+    }
+}
+
 // Update copyright footer year
 document.getElementById('current-year').textContent = new Date().getFullYear();
 
@@ -481,6 +494,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 5. Setup Language switch events
     document.getElementById("lang-toggle").addEventListener("click", () => {
         currentLanguage = currentLanguage === "th" ? "en" : "th";
+        trackGAEvent('change_language', 'preferences', currentLanguage);
 
         const switchContainer = document.querySelector(".lang-switch-container");
         const labelTh = document.querySelector(".lang-label.label-th");
@@ -799,6 +813,8 @@ let touchEndX = 0;
 function openGallery(projectKey) {
     activeProject = projectsData.find(p => p.key === projectKey);
     if (!activeProject) return;
+
+    trackGAEvent('view_project', 'portfolio', projectKey);
 
     activeImageIndex = 0;
     lightboxProjectTitle.textContent = currentLanguage === "th" ? activeProject.title_th : activeProject.title_en;
@@ -1286,7 +1302,10 @@ function setupTerminalPopup() {
         }
     }
 
-    fab.addEventListener('click', toggleTerminal);
+    fab.addEventListener('click', () => {
+        trackGAEvent('open_terminal', 'interaction', 'terminal_fab');
+        toggleTerminal();
+    });
     if (closeBtn) closeBtn.addEventListener('click', () => popup.classList.remove('active'));
     if (closeIcon) closeIcon.addEventListener('click', () => popup.classList.remove('active'));
 }
