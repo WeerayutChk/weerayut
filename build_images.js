@@ -33,13 +33,16 @@ async function processImage(inputPath, relativePath, fileName) {
                 .webp({ quality: 80 }) // 80% quality webp compression
                 .toFile(outputPath);
             console.log(`[Optimized] ${path.join(relativePath, outFileName)}`);
+            // Return the relative web path for the frontend
+            return `optimized_images/${relativePath.replace(/\\/g, '/')}/${outFileName}`;
         } catch (err) {
-            console.error(`[Error] Failed to process ${inputPath}:`, err);
+            console.error(`[Error] Failed to process ${inputPath}:`, err.message || err);
+            return null;
         }
+    } else {
+        // Already exists, just return path
+        return `optimized_images/${relativePath.replace(/\\/g, '/')}/${outFileName}`;
     }
-
-    // Return the relative web path for the frontend (e.g. "optimized_images/donaus/foo/bar.webp")
-    return `optimized_images/${relativePath.replace(/\\/g, '/')}/${outFileName}`;
 }
 
 async function build() {
@@ -80,8 +83,10 @@ async function build() {
                                 
                                 // Process and get the new path
                                 const finalWebPath = await processImage(inputPath, relPath, imgName);
-                                tree[categoryName][projName].push(finalWebPath);
-                                totalImages++;
+                                if (finalWebPath) {
+                                    tree[categoryName][projName].push(finalWebPath);
+                                    totalImages++;
+                                }
                             }
                             console.log(` - [${categoryName}] > [${projName}]: processed ${imageFiles.length} images`);
                         }
