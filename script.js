@@ -1313,3 +1313,45 @@ function setupTerminalPopup() {
 }
 
 setupTerminalPopup();
+
+// ==========================================
+// SMART HOME DASHBOARD API
+// ==========================================
+async function fetchDashboardWeather() {
+    try {
+        const lat = 18.749598;
+        const lon = 98.958349;
+        const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&timezone=auto`);
+        const data = await response.json();
+        
+        if (data && data.current_weather) {
+            const temp = data.current_weather.temperature;
+            const wind = data.current_weather.windspeed;
+            const code = data.current_weather.weathercode;
+            
+            const tempEl = document.getElementById('dash-temp');
+            const windEl = document.getElementById('dash-wind');
+            const weatherEl = document.getElementById('dash-weather');
+            
+            if(tempEl) tempEl.textContent = `${temp} °C`;
+            if(windEl) windEl.textContent = `${wind} km/h`;
+            
+            let weatherDesc = "Clear";
+            if (code >= 1 && code <= 3) weatherDesc = "Cloudy";
+            if (code >= 51 && code <= 67) weatherDesc = "Rainy";
+            if (code >= 71 && code <= 77) weatherDesc = "Snow";
+            if (code >= 95) weatherDesc = "Storm";
+            
+            if(weatherEl) weatherEl.textContent = weatherDesc;
+        }
+    } catch (e) {
+        console.error("Dashboard weather fetch failed:", e);
+        const weatherEl = document.getElementById('dash-weather');
+        if(weatherEl) weatherEl.textContent = "Offline";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    fetchDashboardWeather();
+    setInterval(fetchDashboardWeather, 60000);
+});

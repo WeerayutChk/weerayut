@@ -200,6 +200,85 @@
                         scrolling="no" title="3D Smart House Unity WebGL"></iframe>
                 </div>
             </div>
+
+            <!-- Smart Home Dashboard UI -->
+            <div class="dashboard-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+                
+                <!-- Environment Status -->
+                <div class="card dashboard-card glow-on-hover reveal-element" data-3d-target="true">
+                    <div class="card-header border-orange">
+                        <i class="fa-solid fa-cloud-sun skill-icon text-primary"></i>
+                        <span class="skill-group-title code-font">ENVIRONMENT_API</span>
+                    </div>
+                    <div class="card-body" style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                            <span class="code-font text-muted"><i class="fa-solid fa-temperature-half"></i> Temp (Local)</span>
+                            <span class="code-font" style="font-size: 1.25rem; color: #ff6b6b;" id="dash-temp">-- °C</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                            <span class="code-font text-muted"><i class="fa-solid fa-wind"></i> Wind Speed</span>
+                            <span class="code-font" style="font-size: 1.25rem; color: #4dabf7;" id="dash-wind">-- km/h</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="code-font text-muted"><i class="fa-solid fa-cloud-showers-water"></i> Weather</span>
+                            <span class="code-font" style="font-size: 1.1rem; color: #69db7c;" id="dash-weather">Syncing...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Energy Management -->
+                <div class="card dashboard-card glow-on-hover reveal-element" data-3d-target="true">
+                    <div class="card-header border-orange">
+                        <i class="fa-solid fa-bolt skill-icon text-primary"></i>
+                        <span class="skill-group-title code-font">ENERGY_SYSTEM</span>
+                    </div>
+                    <div class="card-body" style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                            <span class="code-font text-muted"><i class="fa-solid fa-solar-panel"></i> Solar Gen</span>
+                            <span class="code-font" style="font-size: 1.25rem; color: #fcc419;">3.2 kW</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                            <span class="code-font text-muted"><i class="fa-solid fa-battery-full"></i> Battery Level</span>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 60px; height: 10px; background: var(--bg-tertiary); border-radius: 5px; overflow: hidden;">
+                                    <div style="width: 85%; height: 100%; background: #20c997; box-shadow: 0 0 8px #20c997;"></div>
+                                </div>
+                                <span class="code-font" style="font-size: 1.1rem; color: #20c997;">85%</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="code-font text-muted"><i class="fa-solid fa-plug"></i> Consumption</span>
+                            <span class="code-font" style="font-size: 1.25rem; color: #ff922b;">1.8 kW</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remote Controls -->
+                <div class="card dashboard-card glow-on-hover reveal-element" data-3d-target="true">
+                    <div class="card-header border-orange">
+                        <i class="fa-solid fa-gamepad skill-icon text-primary"></i>
+                        <span class="skill-group-title code-font">SMART_CONTROLS</span>
+                    </div>
+                    <div class="card-body" style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                            <span class="code-font text-muted"><i class="fa-regular fa-lightbulb"></i> Auto Lighting</span>
+                            <button class="shortcut-btn code-font" style="padding: 0.2rem 0.6rem; font-size: 0.85rem; background: var(--primary); color: #fff; border-color: var(--primary); border-radius: 12px;">ON</button>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                            <span class="code-font text-muted"><i class="fa-solid fa-lock"></i> Main Gate</span>
+                            <button class="shortcut-btn code-font" style="padding: 0.2rem 0.6rem; font-size: 0.85rem; background: rgba(32, 201, 151, 0.1); border-color: #20c997; color: #20c997; border-radius: 12px;"><i class="fa-solid fa-lock"></i> Locked</button>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="code-font text-muted"><i class="fa-solid fa-fan"></i> AC Target Temp</span>
+                            <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                <button class="shortcut-btn" style="padding: 0.2rem 0.5rem; font-size: 0.9rem; border-radius: 5px;">-</button>
+                                <span class="code-font" style="font-size: 1.1rem; width: 40px; text-align: center;">25°C</span>
+                                <button class="shortcut-btn" style="padding: 0.2rem 0.5rem; font-size: 0.9rem; border-radius: 5px;">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- PORTFOLIO SECTION -->
