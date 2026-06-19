@@ -372,7 +372,8 @@ function generateProjectUI() {
             // Build HTML row card
             htmlContent += `
                 ${preloadLink}
-                <div class="project-btn-card row-card" onclick="openGallery('${safeKey}')" id="proj-${safeKey}-card">
+                <div class="reveal-wrapper reveal-element" data-3d-target="true" style="height: 100%;">
+                    <div class="project-btn-card row-card" onclick="openGallery('${safeKey}')" id="proj-${safeKey}-card">
                     <div class="project-card-thumb" id="thumb-container-${safeKey}">
                         <img src="${imagesArray[0]}" alt="Preview" id="thumb-${safeKey}" class="animated-thumb" loading="lazy">
                     </div>
@@ -382,6 +383,7 @@ function generateProjectUI() {
                         <p class="project-short-desc" id="desc-${safeKey}" style="margin-bottom: 1rem; color: var(--tertiary); font-size: 0.95rem;">${desc_th}</p>
                         <span class="view-gallery-action code-font" id="gallery-${safeKey}" style="display:inline-flex; margin-top: auto;"><i class="fa-solid fa-circle-play"></i> GALLERY (${imagesCount})</span>
                     </div>
+                </div>
                 </div>
             `;
         }

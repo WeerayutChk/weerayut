@@ -35,9 +35,21 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
     font-family: 'Manrope', sans-serif;
     color: var(--text-main);
     background-color: var(--bg-main);
+}
+
+/* 3D Background Canvas */
+#webgl-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
 }
 
 body {
@@ -312,11 +324,31 @@ h1, h2, h3, h4, h5, h6 {
     margin: 1.25rem 0;
 }
 
+/* REVEAL ANIMATION CLASSES */
+.reveal-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.reveal-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* SECTION COMMON STYLING */
 .section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 3rem 2rem;
+    min-height: 100vh;
+    scroll-snap-align: start;
+    scroll-margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 .section-heading {
@@ -685,9 +717,10 @@ a.company-logo.link-logo:hover {
 }
 
 .project-btn-card {
-    background-color: var(--bg-main);
+    background-color: var(--card-bg);
     border: 2px solid var(--border-color);
-    border-radius: 6px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0px var(--shadow-color);
     padding: 1.25rem;
     cursor: pointer;
     position: relative;
@@ -751,9 +784,9 @@ a.company-logo.link-logo:hover {
 }
 
 .project-btn-card:hover {
-    background-color: #FFFFFF;
-    transform: translateY(-2px);
-    box-shadow: 3px 3px 0px var(--shadow-color);
+    background-color: var(--card-bg);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--shadow-color);
 }
 
 .project-card-badge {
