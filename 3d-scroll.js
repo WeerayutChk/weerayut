@@ -20,9 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     updateCameraZ();
 
-    const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+    const isMobileDevice = window.innerWidth <= 600;
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: !isMobileDevice });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(isMobileDevice ? 1 : Math.min(window.devicePixelRatio, 2));
 
     // --- 2. Image Pixel Extraction Logic ---
     function extractPixelsFromImage(c, imgElement, callback) {
@@ -53,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let aspect = rect.width / rect.height;
         if (aspect <= 0 || isNaN(aspect)) aspect = 3;
         
-        const targetPixels = 3000;
+        const targetPixels = window.innerWidth <= 600 ? 1000 : 3000;
         let cols = Math.floor(Math.sqrt(targetPixels * aspect));
         let rows = Math.floor(cols / aspect);
         
@@ -112,7 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
         let aspect = rect.width / rect.height;
         if (aspect <= 0 || isNaN(aspect)) aspect = 3;
         
-        let cols = Math.floor(Math.sqrt(3000 * aspect));
+        const targetPixels = window.innerWidth <= 600 ? 1000 : 3000;
+        let cols = Math.floor(Math.sqrt(targetPixels * aspect));
         let rows = Math.floor(cols / aspect);
         if (cols === 0 || rows === 0) { cols = 90; rows = 30; }
         
