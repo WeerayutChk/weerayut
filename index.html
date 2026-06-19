@@ -22,7 +22,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YEL4WXJ8JK"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-YEL4WXJ8JK');
@@ -30,10 +30,10 @@
 
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "x7tmvnz6ad");
     </script>
 </head>
@@ -86,8 +86,10 @@
                 <!-- Profile Pic and Title Card -->
                 <div class="card profile-card glow-on-hover reveal-element" data-3d-target="true">
                     <div class="profile-frame">
-                        <img src="images/profile.jpg" alt="Weerayut Chueakham Profile" id="profile-img-1" class="profile-img base-img" loading="lazy">
-                        <img src="images/profile_2.png" alt="Weerayut Chueakham Profile Alternate" id="profile-img-2" class="profile-img hover-img" loading="lazy">
+                        <img src="images/profile.jpg" alt="Weerayut Chueakham Profile" id="profile-img-1"
+                            class="profile-img base-img" loading="lazy">
+                        <img src="images/profile_2.png" alt="Weerayut Chueakham Profile Alternate" id="profile-img-2"
+                            class="profile-img hover-img" loading="lazy">
                         <div class="laser-scanner"></div>
                     </div>
                     <div class="profile-info">
@@ -123,7 +125,8 @@
                                     <i class="fa-solid fa-envelope text-primary"></i>
                                     <div>
                                         <span class="contact-label code-font">EMAIL</span>
-                                        <a href="mailto:vrayut86@gmail.com" class="contact-value" onclick="if(typeof trackGAEvent === 'function') trackGAEvent('click_contact', 'contact', 'email')">vrayut86@gmail.com</a>
+                                        <a href="mailto:vrayut86@gmail.com" class="contact-value"
+                                            onclick="if(typeof trackGAEvent === 'function') trackGAEvent('click_contact', 'contact', 'email')">vrayut86@gmail.com</a>
                                     </div>
                                 </div>
                                 <div class="contact-item">
@@ -137,7 +140,8 @@
                                     <i class="fa-solid fa-phone text-primary"></i>
                                     <div>
                                         <span class="contact-label code-font">PHONE</span>
-                                        <a href="tel:0918594329" class="contact-value" onclick="if(typeof trackGAEvent === 'function') trackGAEvent('click_contact', 'contact', 'phone')">091-859-4329</a>
+                                        <a href="tel:0918594329" class="contact-value"
+                                            onclick="if(typeof trackGAEvent === 'function') trackGAEvent('click_contact', 'contact', 'phone')">091-859-4329</a>
                                     </div>
                                 </div>
                                 <div class="contact-item">
@@ -157,7 +161,7 @@
 
         <!-- 3D DIGITAL TWIN PORTFOLIO SECTION -->
         <section id="digital-twin" class="section digital-twin-section">
-            <h2 class="section-heading"><i class="fa-solid fa-cube heading-icon"></i>Smart Home Monitoring System</h2>
+            <h2 class="section-heading"><i class="fa-solid fa-cube heading-icon"></i>Home Monitoring System</h2>
             <div class="card glow-on-hover reveal-element" data-3d-target="true" style="margin-bottom: 3rem;">
                 <div class="card-header">
                     <div class="dot-decorations">
@@ -167,21 +171,33 @@
                     </div>
                     <span class="card-title-text code-font">UNITY_WEBGL_BUILD.exe</span>
                 </div>
-                <div class="card-body" style="padding: 0; overflow: hidden; border-radius: 0 0 var(--radius-md) var(--radius-md); position: relative;">
+                <div class="card-body"
+                    style="padding: 0; overflow: hidden; border-radius: 0 0 var(--radius-md) var(--radius-md); position: relative;">
                     <!-- Overlay to prevent scroll trapping -->
-                    <div id="unity-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 10; cursor: pointer; transition: opacity 0.3s;" onclick="this.style.pointerEvents='none'; this.style.opacity='0'; document.getElementById('unity-close-btn').style.display='flex';">
-                        <i class="fa-solid fa-hand-pointer text-primary" style="font-size: 3rem; margin-bottom: 1rem; animation: pulse 2s infinite;"></i>
-                        <span class="code-font" style="color: white; font-size: 1.2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Tap to Interact</span>
-                        <span style="color: #ccc; font-size: 0.85rem; margin-top: 0.5rem; font-family: 'Sarabun', sans-serif;">(แตะเพื่อเปิดใช้งานโมเดล 3D)</span>
+                    <div id="unity-overlay"
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 10; cursor: pointer; transition: opacity 0.3s;"
+                        onclick="this.style.pointerEvents='none'; this.style.opacity='0'; document.getElementById('unity-close-btn').style.display='flex';">
+                        <i class="fa-solid fa-hand-pointer text-primary"
+                            style="font-size: 3rem; margin-bottom: 1rem; animation: pulse 2s infinite;"></i>
+                        <span class="code-font"
+                            style="color: white; font-size: 1.2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Tap to
+                            Interact</span>
+                        <span
+                            style="color: #ccc; font-size: 0.85rem; margin-top: 0.5rem; font-family: 'Sarabun', sans-serif;">(แตะเพื่อเปิดใช้งานโมเดล
+                            3D)</span>
                     </div>
-                    
+
                     <!-- Stop Button -->
-                    <button id="unity-close-btn" style="position: absolute; top: 15px; right: 15px; z-index: 20; display: none; background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color); padding: 0.5rem 1rem; border-radius: var(--radius-sm); font-family: 'Sarabun', sans-serif; font-size: 0.85rem; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.3);" onclick="this.style.display='none'; const overlay = document.getElementById('unity-overlay'); overlay.style.pointerEvents='auto'; overlay.style.opacity='1';">
-                        <i class="fa-solid fa-lock" style="margin-right: 0.5rem; color: var(--primary);"></i> ล็อกหน้าจอเพื่อเลื่อนต่อ
+                    <button id="unity-close-btn"
+                        style="position: absolute; top: 15px; right: 15px; z-index: 20; display: none; background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color); padding: 0.5rem 1rem; border-radius: var(--radius-sm); font-family: 'Sarabun', sans-serif; font-size: 0.85rem; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.3);"
+                        onclick="this.style.display='none'; const overlay = document.getElementById('unity-overlay'); overlay.style.pointerEvents='auto'; overlay.style.opacity='1';">
+                        <i class="fa-solid fa-lock" style="margin-right: 0.5rem; color: var(--primary);"></i>
+                        ล็อกหน้าจอเพื่อเลื่อนต่อ
                     </button>
 
                     <!-- iframe สำหรับดึงโปรเจกต์ 3D มาแสดงผล -->
-                    <iframe src="3d_house/index.html" width="100%" height="600px" style="border:none; display:block;" scrolling="no" title="3D Smart House Unity WebGL"></iframe>
+                    <iframe src="3d_house/index.html" width="100%" height="600px" style="border:none; display:block;"
+                        scrolling="no" title="3D Smart House Unity WebGL"></iframe>
                 </div>
             </div>
         </section>
@@ -194,7 +210,9 @@
             <div class="timeline">
                 <!-- PORTFOLIO TIMELINE ITEM: Control Systems -->
                 <div class="timeline-item" id="portfolio-control" style="margin-bottom: 3rem;">
-                    <h5 class="sub-role-title code-font" style="margin-bottom: 1.5rem; font-size: 1.25rem;"><i class="fa-solid fa-microchip text-primary"></i> <span id="portfolio-control-title">ผลงานด้านระบบควบคุม (Control Systems)</span></h5>
+                    <h5 class="sub-role-title code-font" style="margin-bottom: 1.5rem; font-size: 1.25rem;"><i
+                            class="fa-solid fa-microchip text-primary"></i> <span
+                            id="portfolio-control-title">ผลงานด้านระบบควบคุม (Control Systems)</span></h5>
                     <div class="projects-grid row-layout-grid" id="projects-container-control_systems">
                         <!-- Injected dynamically by script.js -->
                     </div>
@@ -202,7 +220,9 @@
 
                 <!-- PORTFOLIO TIMELINE ITEM: Processing Systems -->
                 <div class="timeline-item" id="portfolio-processing" style="margin-bottom: 3rem;">
-                    <h5 class="sub-role-title code-font" style="margin-bottom: 1.5rem; font-size: 1.25rem;"><i class="fa-solid fa-server text-primary"></i> <span id="portfolio-processing-title">ผลงานด้านระบบประมวลผล (Processing Systems)</span></h5>
+                    <h5 class="sub-role-title code-font" style="margin-bottom: 1.5rem; font-size: 1.25rem;"><i
+                            class="fa-solid fa-server text-primary"></i> <span
+                            id="portfolio-processing-title">ผลงานด้านระบบประมวลผล (Processing Systems)</span></h5>
                     <div class="projects-grid row-layout-grid" id="projects-container-processing_systems">
                         <!-- Injected dynamically by script.js -->
                     </div>
@@ -210,7 +230,10 @@
 
                 <!-- PORTFOLIO TIMELINE ITEM: Training & Exhibitions -->
                 <div class="timeline-item" id="portfolio-training" style="margin-bottom: 3rem;">
-                    <h5 class="sub-role-title code-font" style="margin-bottom: 1.5rem; font-size: 1.25rem;"><i class="fa-solid fa-chalkboard-user text-primary"></i> <span id="portfolio-training-title">การบรรยายพิเศษและจัดแสดงสินค้า (Seminars & Exhibitions)</span></h5>
+                    <h5 class="sub-role-title code-font" style="margin-bottom: 1.5rem; font-size: 1.25rem;"><i
+                            class="fa-solid fa-chalkboard-user text-primary"></i> <span
+                            id="portfolio-training-title">การบรรยายพิเศษและจัดแสดงสินค้า (Seminars & Exhibitions)</span>
+                    </h5>
                     <div class="projects-grid row-layout-grid" id="projects-container-training_and_exhibitions">
                         <!-- Injected dynamically by script.js -->
                     </div>
@@ -236,9 +259,11 @@
                                     <span id="donaus-title-th" class="job-thai-desc"
                                         style="margin-left: 0.75rem; color: var(--text-secondary); font-family: 'Sarabun', sans-serif; font-size: 0.85em; font-weight: normal;">(วิศวกรวิจัยและพัฒนาผลิตภัณฑ์)</span>
                                 </h3>
-                                <h4 class="experience-company code-font text-primary" data-key="donaus-company">บริษัท ดลอัส จำกัด</h4>
+                                <h4 class="experience-company code-font text-primary" data-key="donaus-company">บริษัท
+                                    ดลอัส จำกัด</h4>
                             </div>
-                            <a href="https://www.donaus.com/index.html" target="_blank" rel="noopener noreferrer" onclick="if(typeof trackGAEvent === 'function') trackGAEvent('click_company', 'experience', 'donaus')"
+                            <a href="https://www.donaus.com/index.html" target="_blank" rel="noopener noreferrer"
+                                onclick="if(typeof trackGAEvent === 'function') trackGAEvent('click_company', 'experience', 'donaus')"
                                 class="company-logo link-logo" aria-label="Visit Donaus Website">
                                 <img src="images/logo/donaus.webp" alt="Donaus Logo">
                             </a>
@@ -261,9 +286,11 @@
                             <div class="company-info">
                                 <h3 class="experience-title" id="innoedge-main-title">Project Manager & Technical
                                     Engineer</h3>
-                                <h4 class="experience-company code-font text-primary" data-key="innoedge-company">บริษัท อินโนเอดจ์ โกโก จำกัด</h4>
+                                <h4 class="experience-company code-font text-primary" data-key="innoedge-company">บริษัท
+                                    อินโนเอดจ์ โกโก จำกัด</h4>
                             </div>
-                            <a href="https://www.facebook.com/ino8go/?locale=th_TH" target="_blank" onclick="if(typeof trackGAEvent === 'function') trackGAEvent('click_company', 'experience', 'ino8')"
+                            <a href="https://www.facebook.com/ino8go/?locale=th_TH" target="_blank"
+                                onclick="if(typeof trackGAEvent === 'function') trackGAEvent('click_company', 'experience', 'ino8')"
                                 rel="noopener noreferrer" class="company-logo link-logo"
                                 aria-label="Visit Innoedge Facebook Page">
                                 <img src="images/logo/inno8gogo.jpg" alt="Innoedge Logo">
@@ -530,7 +557,8 @@
             <div class="card terminal-card-shell">
                 <div class="terminal-shell-header">
                     <div class="dot-decorations">
-                        <span class="dot red" id="term-close-btn" style="cursor: pointer;" title="Close Terminal"></span>
+                        <span class="dot red" id="term-close-btn" style="cursor: pointer;"
+                            title="Close Terminal"></span>
                         <span class="dot yellow"></span>
                         <span class="dot green"></span>
                     </div>
@@ -538,7 +566,8 @@
                     <div class="shell-controls">
                         <i class="fa-regular fa-window-minimize"></i>
                         <i class="fa-regular fa-square"></i>
-                        <i class="fa-solid fa-xmark" id="term-close-icon" style="cursor: pointer;" title="Close Terminal"></i>
+                        <i class="fa-solid fa-xmark" id="term-close-icon" style="cursor: pointer;"
+                            title="Close Terminal"></i>
                     </div>
                 </div>
 
@@ -571,8 +600,8 @@
                     <button class="shortcut-btn code-font" onclick="runTerminalCmd('contact')">contact</button>
                     <button class="shortcut-btn code-font" onclick="runTerminalCmd('clear')">clear</button>
                 </div>
-                </div>
             </div>
+        </div>
         </div>
 
         <!-- Terminal FAB Button -->
